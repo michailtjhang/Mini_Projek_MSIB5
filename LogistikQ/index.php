@@ -1,7 +1,7 @@
 <?php  
 
-// include_once 'databases/koneksi.php';
-// include_once 'dtBarang.php';
+include_once 'databases/koneksi.php';
+include_once 'models/barang.php';
 
 include_once 'template/top.php';
 include_once 'template/sizebar.php';
