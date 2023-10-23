@@ -6,6 +6,11 @@ $data_barang = $model->dataBarang();
 ?>
 
 <div class="container-fluid pt-4 px-4">
+    <h1 class="mt-4">Barang</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="index.php?url=dashboard">Dashboard</a></li>
+        <li class="breadcrumb-item active">Tables</li>
+    </ol>
     <div class="row g-4">
         <div class="col-12">
             <div class="bg-secondary rounded h-100 p-4">

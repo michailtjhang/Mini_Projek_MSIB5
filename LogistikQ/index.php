@@ -2,9 +2,11 @@
 
 include_once 'databases/koneksi.php';
 include_once 'models/barang.php';
+include_once 'models/pengiriman.php';
 include_once 'models/kurir.php';
 include_once 'models/detail_penerima.php';
 include_once 'models/user.php';
+include_once 'models/pembayaran.php';
 
 include_once 'template/top.php';
 include_once 'template/sizebar.php';
