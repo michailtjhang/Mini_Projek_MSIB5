@@ -1,7 +1,7 @@
 <?php  
 
-$model =  new barang();
-$data_pembayaran = $model->dataBarang();
+$model =  new pembayaran();
+$data_pembayaran = $model->dataPembayaran();
 
 ?>
 
