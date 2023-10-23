@@ -19,7 +19,7 @@ $data_pembayaran = $model->dataPembayaran();
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">no</th>
+                                <th scope="col">#</th>
                                 <th scope="col">id</th>
                                 <th scope="col">Metode Pembayaran</th>
                                 <th scope="col">ToTal_Harga</th </tr>
