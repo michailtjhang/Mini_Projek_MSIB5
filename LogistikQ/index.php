@@ -2,6 +2,7 @@
 
 include_once 'databases/koneksi.php';
 include_once 'models/barang.php';
+include_once 'models/pengiriman.php';
 
 include_once 'template/top.php';
 include_once 'template/sizebar.php';
