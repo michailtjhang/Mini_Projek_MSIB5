@@ -20,6 +20,7 @@
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="index.php?url=dtbarang" class="dropdown-item">Barang</a>
                             <a href="index.php?url=dtkurir" class="dropdown-item">Kurir</a>
+                            <a href="index.php?url=dtdetail_penerima" class="dropdown-item">Detail_penerima</a>
                             <a href="typography.html" class="dropdown-item">Typography</a>
                             <a href="element.html" class="dropdown-item">Other Elements</a>
                         </div>
