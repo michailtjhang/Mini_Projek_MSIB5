@@ -1,46 +1,42 @@
 <?php
 
-$model =  new kurir();
-$data_kurir = $model->dataKurir();
+$model =  new user();
+$data_user = $model->dataUser();
 
 ?>
 
 <div class="container-fluid pt-4 px-4">
-    <h1 class="mt-4">Kurir</h1>
+    <h1 class="mt-4">User</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="index.php?url=dashboard">Dashboard</a></li>
-        <li class="breadcrumb-item active">Kurir</li>
+        <li class="breadcrumb-item active">Profile</li>
     </ol>
     <div class="row g-4">
         <div class="col-12">
             <div class="bg-secondary rounded h-100 p-4">
-                <h6 class="mb-4">Table Kurir</h6>
+                <h6 class="mb-4">Table User</h6>
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Nama</th>
-                                <th scope="col">Nomor Telepon</th>
-                                <th scope="col">Jadwal</th>
-                                <th scope="col">Aksi</th></th>
+                                <th scope="col">nama</th>
+                                <th scope="col">username</th>
+                                <th scope="col">password</th>
+                                <th scope="col">nomor_telepon</th>
+                                <th scope="col">alamat</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php $id = 1; ?>
-                            <?php foreach ($data_kurir as $row) : ?>
+                            <?php foreach ($data_user as $row) : ?>
                                 <tr>
                                     <th scope="row"><?= $id; ?></th>
                                     <td><?= $row['nama']; ?></td>
+                                    <td><?= $row['username']; ?></td>
+                                    <td><?= $row['password']; ?></td>
                                     <td><?= $row['nomor_telepon']; ?></td>
-                                    <td><?= $row['jadwal']; ?></td>
-                                    <td>
-                                        <form>
-                                            <a href="index.php?url=kurir_details&id=<?= $row['id'] ?>">
-                                                <button type="button" class="btn btn-danger btn-sm">Details</button>
-                                            </a>
-                                        </form>
-                                    </td>
+                                    <td><?= $row['alamat']; ?></td>
                                 </tr>
                                 <?php $id++; ?>
                             <?php endforeach; ?>
