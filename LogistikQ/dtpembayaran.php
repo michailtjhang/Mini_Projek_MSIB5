@@ -23,7 +23,8 @@ $data_pembayaran = $model->dataPembayaran();
                                 <th scope="col">#</th>
                                 <th scope="col">id</th>
                                 <th scope="col">Metode Pembayaran</th>
-                                <th scope="col">ToTal_Harga</th </tr>
+                                <th scope="col">ToTal_Harga</th>
+                            </tr>
                         </thead>
                         <tbody>
                             <?php $d = 1; ?>
