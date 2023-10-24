@@ -9,7 +9,8 @@ $data_kirim = $model->dataKirim();
     <h1 class="mt-4">Pengiriman</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="index.php?url=dashboard">Dashboard</a></li>
-        <li class="breadcrumb-item active">Tables</li>
+        <li class="breadcrumb-item active">Data Pengiriman</li>
+        <li class="breadcrumb-item active">Detail Pengiriman</li>
     </ol>
     <div class="row g-4">
         <div class="col-12">
@@ -30,6 +31,7 @@ $data_kirim = $model->dataKirim();
                                 <th scope="col">No Telp Penerima</th>
                                 <th scope="col">Nama Kurir</th>
                                 <th scope="col">Total Bayar</th>
+                                <th scope="col">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -47,6 +49,13 @@ $data_kirim = $model->dataKirim();
                                     <td><?= $row['no_telp_penerima']; ?></td>
                                     <td><?= $row['nama_kurir']; ?></td>
                                     <td><?= $row['total_bayar']; ?></td>
+                                    <td>
+                                        <form>
+                                            <a href="index.php?url=kurir_details&id=<?= $row['id'] ?>">
+                                                <button type="button" class="btn btn-danger btn-sm">Details</button>
+                                            </a>
+                                        </form>
+                                    </td>
                                 </tr>
                                 <?php $id++; ?>
                             <?php endforeach; ?>

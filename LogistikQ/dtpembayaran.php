@@ -9,7 +9,8 @@ $data_pembayaran = $model->dataPembayaran();
     <h1 class="mt-4">Pembayaran</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="index.php?url=dashboard">Dashboard</a></li>
-        <li class="breadcrumb-item active">Tables</li>
+        <li class="breadcrumb-item active">Data Pengiriman</li>
+        <li class="breadcrumb-item active">Pembayaran</li>
     </ol>
     <div class="row g-4">
         <div class="col-12">

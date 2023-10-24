@@ -9,7 +9,7 @@ $data_kurir = $model->dataKurir();
     <h1 class="mt-4">Kurir</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="index.php?url=dashboard">Dashboard</a></li>
-        <li class="breadcrumb-item active">Tables</li>
+        <li class="breadcrumb-item active">Kurir</li>
     </ol>
     <div class="row g-4">
         <div class="col-12">
@@ -20,9 +20,10 @@ $data_kurir = $model->dataKurir();
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">nama</th>
-                                <th scope="col">nomor_telepon</th>
-                                <th scope="col">jadwal</th>
+                                <th scope="col">Nama</th>
+                                <th scope="col">Nomor Telepon</th>
+                                <th scope="col">Jadwal</th>
+                                <th scope="col">Aksi</th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -33,6 +34,13 @@ $data_kurir = $model->dataKurir();
                                     <td><?= $row['nama']; ?></td>
                                     <td><?= $row['nomor_telepon']; ?></td>
                                     <td><?= $row['jadwal']; ?></td>
+                                    <td>
+                                        <form>
+                                            <a href="index.php?url=kurir_details&id=<?= $row['id'] ?>">
+                                                <button type="button" class="btn btn-danger btn-sm">Details</button>
+                                            </a>
+                                        </form>
+                                    </td>
                                 </tr>
                                 <?php $id++; ?>
                             <?php endforeach; ?>

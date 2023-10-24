@@ -9,7 +9,7 @@ $data_user = $model->dataUser();
     <h1 class="mt-4">User</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="index.php?url=dashboard">Dashboard</a></li>
-        <li class="breadcrumb-item active">Tables</li>
+        <li class="breadcrumb-item active">Profile</li>
     </ol>
     <div class="row g-4">
         <div class="col-12">
