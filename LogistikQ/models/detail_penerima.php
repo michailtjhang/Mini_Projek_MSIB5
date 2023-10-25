@@ -1,6 +1,6 @@
 <?php
 
-class detail_penerimaan
+class detail_penerima
 {
     private $koneksi;
     public function __construct()
@@ -9,7 +9,7 @@ class detail_penerimaan
         $this->koneksi = $dbh;
     }
 
-    public function datadetail_penerimaan()
+    public function datadetail_penerima()
     {
         // mengambil dan melihat table jenis_produk
         $sql = "SELECT * FROM detail_penerimaan";
@@ -20,25 +20,5 @@ class detail_penerimaan
         $rs = $ps->fetchALL();
 
         return $rs;
-    }
-
-    public function getdetail_penerimaan($id)
-    {
-        // mengambil dan melihat table jenis_produk
-        $sql = "SELECT * FROM detail_penerimaan WHERE id=?";
-
-        // menggunakan mekanisme prepere statement PDO
-        $ps = $this->koneksi->prepare($sql);
-        $ps->execute([$id]);
-        $rs = $ps->fetch();
-
-        return $rs;
-    }
-
-    public function simpan($data){
-        $sql = "INSERT INTO detail_penerimaan (kode, pengiriman_id, nama_penerima, waktu_penerima)
-        VALUES (?,?,?,?)";
-        $ps = $this->koneksi->prepare($sql);
-        $ps->execute($data);
     }
 }
