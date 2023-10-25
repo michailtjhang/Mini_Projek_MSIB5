@@ -17,6 +17,9 @@ $data_barang = $model->dataBarang();
             <div class="bg-secondary rounded h-100 p-4">
                 <h6 class="mb-4">Table Barang</h6>
                 <div class="table-responsive">
+                    <a href="index.php?url=form_barang">
+                        <button type="button" class="btn btn-primary btn-sm">Tambah</button>
+                    </a> <br>
                     <table class="table">
                         <thead>
                             <tr>
