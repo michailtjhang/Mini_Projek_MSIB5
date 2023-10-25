@@ -11,14 +11,14 @@ $data_barang = $model->dataBarang();
             <div class="bg-secondary rounded h-100 p-4">
                 <h6 class="mb-4">Table Barang</h6>
                 <div class="table-responsive">
-                    <table class="table">
+                    <table id="datapegawai" class="table">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Kode</th>
-                                <th scope="col">Kategori</th>
-                                <th scope="col">Deskripsi</th>
-                                <th scope="col">Kisaran Harga</th>
+                                <th class="text-info" scope="col">#</th>
+                                <th class="text-info" scope="col">Kode</th>
+                                <th class="text-info" scope="col">Kategori</th>
+                                <th class="text-info" scope="col">Deskripsi</th>
+                                <th class="text-info" scope="col">Kisaran Harga</th>
                             </tr>
                         </thead>
                         <tbody>
