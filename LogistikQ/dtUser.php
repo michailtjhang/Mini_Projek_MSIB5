@@ -15,16 +15,21 @@ $data_user = $model->dataUser();
         <div class="col-12">
             <div class="bg-secondary rounded h-100 p-4">
                 <h6 class="mb-4">Table User</h6>
+                <a href="index.php?url=user_form">
+                <button class="btn btn-sm btn-primary">Tambah</button></a>
                 <div class="table-responsive">
                     <table id="datapegawai" class="table">
                         <thead>
                             <tr>
+
                                 <th class="text-info" scope="col">#</th>
                                 <th class="text-info" scope="col">nama</th>
                                 <th class="text-info" scope="col">username</th>
                                 <th class="text-info" scope="col">password</th>
                                 <th class="text-info" scope="col">nomor_telepon</th>
                                 <th class="text-info" scope="col">alamat</th>
+
+            
                             </tr>
                         </thead>
                         <tbody>

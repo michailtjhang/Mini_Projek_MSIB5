@@ -6,19 +6,28 @@ $data_barang = $model->dataBarang();
 ?>
 
 <div class="container-fluid pt-4 px-4">
+    <h1 class="mt-4">Barang</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="index.php?url=dashboard">Dashboard</a></li>
+        <li class="breadcrumb-item active">Data Pengiriman</li>
+        <li class="breadcrumb-item active">Barang</li>
+    </ol>
     <div class="row g-4">
         <div class="col-12">
             <div class="bg-secondary rounded h-100 p-4">
                 <h6 class="mb-4">Table Barang</h6>
                 <div class="table-responsive">
-                    <table id="datapegawai" class="table">
+                    <a href="index.php?url=barang/form_barang">
+                        <button type="button" class="btn btn-primary btn-sm">Tambah</button>
+                    </a> <br>
+                    <table class="table">
                         <thead>
                             <tr>
-                                <th class="text-info" scope="col">#</th>
-                                <th class="text-info" scope="col">Kode</th>
-                                <th class="text-info" scope="col">Kategori</th>
-                                <th class="text-info" scope="col">Deskripsi</th>
-                                <th class="text-info" scope="col">Kisaran Harga</th>
+                                <th scope="col">#</th>
+                                <th scope="col">Kode</th>
+                                <th scope="col">Kategori</th>
+                                <th scope="col">Deskripsi</th>
+                                <th scope="col">Kisaran Harga</th>
                             </tr>
                         </thead>
                         <tbody>

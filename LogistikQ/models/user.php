@@ -21,4 +21,11 @@ class user
 
         return $rs;
     }
+    public function simpan($data){
+        $sql = "INSERT INTO user (nama, username,password, nomor_telepon, alamat)
+        VALUES (?,?,?,?,?)";
+        $ps = $this->koneksi->prepare($sql);
+        $ps->execute($data);
+    }
 }
+?>
