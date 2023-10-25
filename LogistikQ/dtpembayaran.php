@@ -16,6 +16,10 @@ $data_pembayaran = $model->dataPembayaran();
         <div class="col-12">
             <div class="bg-secondary rounded h-100 p-4">
                 <h6 class="mb-4">Table Pembayaran</h6>
+               <a href="index.php?url=pembayaran_form">
+            <button type="button" class="btn btn-primary btn-sm">Tambah</button>
+                                            </a>
+                                      
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
@@ -24,16 +28,30 @@ $data_pembayaran = $model->dataPembayaran();
                                 <th scope="col">id</th>
                                 <th scope="col">Metode Pembayaran</th>
                                 <th scope="col">ToTal_Harga</th>
+                                <th scope="col">id pengiriman</th>
+                                <th scope='col'>Aksi</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php $d = 1; ?>
                             <?php foreach ($data_pembayaran as $row) : ?>
                                 <tr>
-                                    <th scope="row"><?= $d; ?></th>
+                                    <th scope="row"><?= $d++; ?></th>
                                     <td><?= $row['id']; ?></td>
                                     <td><?= $row['metode']; ?></td>
                                     <td><?= $row['total_harga']; ?></td>
+                                    <td><?= $row['pengiriman_id']; ?></td>
+                                    <td>
+                                    <form>
+                                            <a href="index.php?url=pembayaran_detail&id=<?= $row['id'] ?>">
+                                                <button type="button" class="btn btn-danger btn-sm">Details</button>
+                                            </a>
+                                        </form>
+                                    </td>
+                                    <td>
+                                   
+                                    </td>
                                 </tr>
                                 <?php $d++; ?>
                             <?php endforeach; ?>

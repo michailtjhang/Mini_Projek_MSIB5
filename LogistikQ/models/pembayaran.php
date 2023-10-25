@@ -9,7 +9,7 @@ class pembayaran{
 
     public function dataPembayaran() {
         // mengambil dan melihat table jenis_produk
-        $sql = "SELECT * FROM pembayaran";
+        $sql = "SELECT * FROM pembayaran ";
 
         // menggunakan mekanisme prepere statement PDO
         $ps = $this->koneksi->prepare($sql);
@@ -17,6 +17,23 @@ class pembayaran{
         $rs = $ps->fetchALL();
 
         return $rs;
+    }
+
+    public function getPembayaran($id) {
+        // mengambil dan melihat table jenis_produk
+        $sql = "SELECT * FROM pembayaran where id = ?";
+
+        // menggunakan mekanisme prepere statement PDO
+        $ps = $this->koneksi->prepare($sql);
+        $ps->execute([$id]);
+        $rs = $ps->fetch();
+
+        return $rs;
+    }
+    public function simpandata($data){
+        $sql = "INSERT INTO pembayaran (metode, total_harga,pengiriman_id) VALUES (?,?,?)";
+        $ps = $this->koneksi->prepare($sql);
+        $ps->execute($data);
     }
 }
 

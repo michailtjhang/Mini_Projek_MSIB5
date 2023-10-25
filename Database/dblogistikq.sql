@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2023 at 10:57 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Waktu pembuatan: 25 Okt 2023 pada 04.59
+-- Versi server: 10.4.25-MariaDB
+-- Versi PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `barang`
+-- Struktur dari tabel `barang`
 --
 
 CREATE TABLE `barang` (
@@ -32,10 +32,10 @@ CREATE TABLE `barang` (
   `kategori` varchar(50) NOT NULL,
   `deskripsi` varchar(45) NOT NULL,
   `kisaran_harga` varchar(45) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `barang`
+-- Dumping data untuk tabel `barang`
 --
 
 INSERT INTO `barang` (`kode`, `kategori`, `deskripsi`, `kisaran_harga`) VALUES
@@ -46,22 +46,22 @@ INSERT INTO `barang` (`kode`, `kategori`, `deskripsi`, `kisaran_harga`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `detail_penerima`
+-- Struktur dari tabel `detail_penerimaan`
 --
 
-CREATE TABLE `detail_penerima` (
+CREATE TABLE `detail_penerimaan` (
   `id` int(11) NOT NULL,
   `kode` varchar(45) NOT NULL,
   `pengiriman_id` int(11) NOT NULL,
   `nama_penerima` varchar(45) NOT NULL,
   `waktu_penerima` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `detail_penerima`
+-- Dumping data untuk tabel `detail_penerimaan`
 --
 
-INSERT INTO `detail_penerima` (`id`, `kode`, `pengiriman_id`, `nama_penerima`, `waktu_penerima`) VALUES
+INSERT INTO `detail_penerimaan` (`id`, `kode`, `pengiriman_id`, `nama_penerima`, `waktu_penerima`) VALUES
 (1, 'JNE1', 1, 'Michail', '2023-10-09 15:53:36'),
 (2, 'JNE2', 2, 'Huda', '2023-10-09 15:53:36'),
 (3, 'JNE3', 3, 'Depia', '2023-10-11 15:55:56');
@@ -69,18 +69,18 @@ INSERT INTO `detail_penerima` (`id`, `kode`, `pengiriman_id`, `nama_penerima`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kurir`
+-- Struktur dari tabel `kurir`
 --
 
 CREATE TABLE `kurir` (
   `id` int(11) NOT NULL,
   `nama` varchar(45) NOT NULL,
   `nomor_telepon` varchar(45) NOT NULL,
-  `jadwal` varchar(45) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `jadwal` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `kurir`
+-- Dumping data untuk tabel `kurir`
 --
 
 INSERT INTO `kurir` (`id`, `nama`, `nomor_telepon`, `jadwal`) VALUES
@@ -91,28 +91,29 @@ INSERT INTO `kurir` (`id`, `nama`, `nomor_telepon`, `jadwal`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pembayaran`
+-- Struktur dari tabel `pembayaran`
 --
 
 CREATE TABLE `pembayaran` (
   `id` int(11) NOT NULL,
   `metode` varchar(45) NOT NULL,
-  `total_harga` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `total_harga` double NOT NULL,
+  `pengiriman_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `pembayaran`
+-- Dumping data untuk tabel `pembayaran`
 --
 
-INSERT INTO `pembayaran` (`id`, `metode`, `total_harga`) VALUES
-(1, 'COD', 8000000),
-(2, 'COD', 5000),
-(3, 'Transfer Bank BCA', 4000000);
+INSERT INTO `pembayaran` (`id`, `metode`, `total_harga`, `pengiriman_id`) VALUES
+(1, 'COD', 8000000, 1),
+(2, 'COD', 5000, 2),
+(3, 'Transfer Bank BCA', 4000000, 3);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pengiriman`
+-- Struktur dari tabel `pengiriman`
 --
 
 CREATE TABLE `pengiriman` (
@@ -124,24 +125,23 @@ CREATE TABLE `pengiriman` (
   `nama_penerima` varchar(45) NOT NULL,
   `lokasi_tujuan` varchar(225) NOT NULL,
   `status_pengiriman` varchar(45) NOT NULL,
-  `no_telp_penerima` varchar(45) NOT NULL,
-  `kurir_id` int(11) NOT NULL,
-  `pembayaran_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `nomor_telp_penerima` varchar(45) NOT NULL,
+  `kurir_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `pengiriman`
+-- Dumping data untuk tabel `pengiriman`
 --
 
-INSERT INTO `pengiriman` (`id`, `kode`, `id_user`, `kode_barang`, `tanggal`, `nama_penerima`, `lokasi_tujuan`, `status_pengiriman`, `no_telp_penerima`, `kurir_id`, `pembayaran_id`) VALUES
-(1, 'JNE1', 1, 'L001', '2023-10-09', 'Michail', 'Jakarta', 'Proses', '083601755967', 1, 1),
-(2, 'JNE2', 2, 'M001', '2023-10-09', 'Huda', 'Solo', 'Perjalanan', '081630642958', 2, 2),
-(3, 'JNE3', 3, 'T001', '2023-10-11', 'depia', 'Semarang', 'Proses', '085640642767', 3, 3);
+INSERT INTO `pengiriman` (`id`, `kode`, `id_user`, `kode_barang`, `tanggal`, `nama_penerima`, `lokasi_tujuan`, `status_pengiriman`, `nomor_telp_penerima`, `kurir_id`) VALUES
+(1, 'JNE1', 1, 'L001', '2023-10-09', 'Michail', 'Jakarta', 'Proses', '083601755967', 1),
+(2, 'JNE2', 2, 'M001', '2023-10-09', 'Huda', 'Solo', 'Perjalanan', '081630642958', 2),
+(3, 'JNE3', 3, 'T001', '2023-10-11', 'depia', 'Semarang', 'Proses', '085640642767', 3);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -151,10 +151,10 @@ CREATE TABLE `user` (
   `password` varchar(225) NOT NULL,
   `nomor_telepon` varchar(16) NOT NULL,
   `alamat` varchar(45) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id`, `nama`, `username`, `password`, `nomor_telepon`, `alamat`) VALUES
@@ -167,79 +167,105 @@ INSERT INTO `user` (`id`, `nama`, `username`, `password`, `nomor_telepon`, `alam
 --
 
 --
--- Indexes for table `barang`
+-- Indeks untuk tabel `barang`
 --
 ALTER TABLE `barang`
   ADD PRIMARY KEY (`kode`),
   ADD UNIQUE KEY `kode_UNIQUE` (`kode`);
 
 --
--- Indexes for table `detail_penerima`
+-- Indeks untuk tabel `detail_penerimaan`
 --
-ALTER TABLE `detail_penerima`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `detail_penerimaan`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_detail_pengiriman_pengiriman1_idx` (`pengiriman_id`);
 
 --
--- Indexes for table `kurir`
+-- Indeks untuk tabel `kurir`
 --
 ALTER TABLE `kurir`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pembayaran`
+-- Indeks untuk tabel `pembayaran`
 --
 ALTER TABLE `pembayaran`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_Pembayaran_pengiriman1_idx` (`pengiriman_id`);
 
 --
--- Indexes for table `pengiriman`
+-- Indeks untuk tabel `pengiriman`
 --
 ALTER TABLE `pengiriman`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_pengiriman_user_idx` (`id_user`),
   ADD KEY `fk_pengiriman_barang1_idx` (`kode_barang`),
-  ADD KEY `fk_pengiriman_kurir1_idx` (`kurir_id`),
-  ADD KEY `fk_pengiriman_Pembayaran1_idx` (`pembayaran_id`);
+  ADD KEY `fk_pengiriman_kurir1_idx` (`kurir_id`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `nama_UNIQUE` (`nama`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `detail_penerima`
+-- AUTO_INCREMENT untuk tabel `detail_penerimaan`
 --
-ALTER TABLE `detail_penerima`
+ALTER TABLE `detail_penerimaan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `kurir`
+-- AUTO_INCREMENT untuk tabel `kurir`
 --
 ALTER TABLE `kurir`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `pembayaran`
+-- AUTO_INCREMENT untuk tabel `pembayaran`
 --
 ALTER TABLE `pembayaran`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `pengiriman`
+-- AUTO_INCREMENT untuk tabel `pengiriman`
 --
 ALTER TABLE `pengiriman`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `detail_penerimaan`
+--
+ALTER TABLE `detail_penerimaan`
+  ADD CONSTRAINT `fk_detail_pengiriman_pengiriman1` FOREIGN KEY (`pengiriman_id`) REFERENCES `pengiriman` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Ketidakleluasaan untuk tabel `pembayaran`
+--
+ALTER TABLE `pembayaran`
+  ADD CONSTRAINT `fk_Pembayaran_pengiriman1` FOREIGN KEY (`pengiriman_id`) REFERENCES `pengiriman` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Ketidakleluasaan untuk tabel `pengiriman`
+--
+ALTER TABLE `pengiriman`
+  ADD CONSTRAINT `fk_pengiriman_barang1` FOREIGN KEY (`kode_barang`) REFERENCES `barang` (`kode`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_pengiriman_kurir1` FOREIGN KEY (`kurir_id`) REFERENCES `kurir` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_pengiriman_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

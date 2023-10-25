@@ -12,7 +12,7 @@ class detail_penerima
     public function datadetail_penerima()
     {
         // mengambil dan melihat table jenis_produk
-        $sql = "SELECT * FROM detail_penerima";
+        $sql = "SELECT * FROM detail_penerimaan";
 
         // menggunakan mekanisme prepere statement PDO
         $ps = $this->koneksi->prepare($sql);
