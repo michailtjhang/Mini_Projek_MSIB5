@@ -19,22 +19,30 @@ $data_detail_penerimaan = $model->datadetail_penerimaan();
                 <a href="index.php?url=detail_penerima_form">
                 <button class="btn btn-sm btn-primary">Tambah</button></a>
                 <div class="table-responsive">
-                    <table class="table">
+                    <table id="datapegawai" class="table">
                         <thead>
                             <tr>
+<<<<<<< HEAD
                                 <th scope="col">#</th>
                                 <th scope="col">kode</th>
                                 <th scope="col">pengiriman_id</th>
                                 <th scope="col">nama_penerima</th>
                                 <th scope="col">waktu_penerima</th>
                                 <th scope="col">aksi</th>
+=======
+                                <th class="text-info" scope="col">#</th>
+                                <th class="text-info" scope="col">kode</th>
+                                <th class="text-info" scope="col">pengiriman_id</th>
+                                <th class="text-info" scope="col">nama_penerima</th>
+                                <th class="text-info" scope="col">waktu_penerima</th>
+>>>>>>> 1b493c172b5284f467396e9e11a79284b15d4f21
                             </tr>
                         </thead>
                         <tbody>
                             <?php $id = 1; ?>
                             <?php foreach ($data_detail_penerimaan as $row) : ?>
                                 <tr>
-                                    <th scope="row"><?= $id; ?></th>
+                                    <td><?= $id; ?></td>
                                     <td><?= $row['kode']; ?></td>
                                     <td><?= $row['pengiriman_id']; ?></td>
                                     <td><?= $row['nama_penerima']; ?></td>

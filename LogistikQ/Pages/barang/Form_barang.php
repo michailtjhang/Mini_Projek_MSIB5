@@ -1,4 +1,5 @@
 <?php
+
 $obj_barang = new barang();
 $sr_barang = $obj_barang->dataBarang();
 
@@ -6,7 +7,7 @@ $sr_barang = $obj_barang->dataBarang();
 
 <div class="container-fluid pt-4 px-4">
   <!-- form start -->
-  <form action="barang/Control_barang.php" method="POST">
+  <form action="Pages/barang/Control_barang.php" method="POST">
     <div class="col-sm-12 col-xl-9">
       <div class="bg-secondary rounded h-100 p-4">
         <!-- input pertama -->

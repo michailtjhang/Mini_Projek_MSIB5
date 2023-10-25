@@ -14,30 +14,33 @@ $data_kirim = $model->dataKirim();
     </ol>
     <div class="row g-4">
         <div class="col-12">
-            <div class="bg-secondary rounded h-100 p-4">
+            <div class="bg-secondary rounded overflow-hidden h-100 p-4">
                 <h6 class="mb-4">Table Pengiriman</h6>
+                <a href="index.php?url=Pages/Kirim/form_kirim">
+                    <button type="button" class="btn btn-primary btn-sm mb-3">Tambah</button>
+                </a>
                 <div class="table-responsive">
-                    <table id="datapegawai" class="">
+                    <table id="datapegawai" class="table">
                         <thead>
                             <tr>
-                                <th class="text-info" scope="col">No</th>
-                                <th class="text-info" scope="col">Kode</th>
-                                <th class="text-info" scope="col" >Nama User</th>
-                                <th class="text-info" scope="col">Kode Barang</th>
-                                <th class="text-info" scope="col">Tanggal</th>
-                                <th class="text-info" scope="col">Nama Penerima</th>
-                                <th class="text-info" scope="col">Lokasi Tujuan</th>
-                                <th class="text-info" scope="col">Status Pengiriman</th>
-                                <th class="text-info" scope="col">No Telp Penerima</th>
-                                <th class="text-info" scope="col">Nama Kurir</th>
-                                <th class="text-info" scope="col">Aksi</th>
+                                <th scope="col">#</th>
+                                <th scope="col">Kode</th>
+                                <th scope="col">Nama User</th>
+                                <th scope="col">Kode Barang</th>
+                                <th scope="col">Tanggal</th>
+                                <th scope="col">Nama Penerima</th>
+                                <th scope="col">Lokasi Tujuan</th>
+                                <th scope="col">Status Pengiriman</th>
+                                <th scope="col">No Telp Penerima</th>
+                                <th scope="col">Nama Kurir</th>
+                                <th scope="col">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php $id = 1; ?>
                             <?php foreach ($data_kirim as $row) : ?>
                                 <tr>
-                                    <th><?= $id; ?></th>
+                                    <th scope="row"><?= $id; ?></th>
                                     <td><?= $row['kode']; ?></td>
                                     <td><?= $row['nama_user']; ?></td>
                                     <td><?= $row['kode_barang']; ?></td>
@@ -49,7 +52,7 @@ $data_kirim = $model->dataKirim();
                                     <td><?= $row['nama_kurir']; ?></td>
                                     <td>
                                         <form>
-                                            <a href="index.php?url=kurir_details&id=<?= $row['id'] ?>">
+                                            <a href="index.php?url=Pages/Kirim/kirim_detail&id=<?= $row['id'] ?>">
                                                 <button type="button" class="btn btn-danger btn-sm">Details</button>
                                             </a>
                                         </form>
