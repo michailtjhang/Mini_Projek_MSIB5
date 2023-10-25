@@ -14,13 +14,13 @@ $data_barang = $model->dataBarang();
     </ol>
     <div class="row g-4">
         <div class="col-12">
-            <div class="bg-secondary rounded h-100 p-4">
+            <div class="bg-secondary rounded overflow-hidden    h-100 p-4">
                 <h6 class="mb-4">Table Barang</h6>
+                <a href="index.php?url=Pages/barang/form_barang">
+                    <button type="button" class="btn btn-primary btn-sm mb-3">Tambah</button>
+                </a>
                 <div class="table-responsive">
-                    <a href="index.php?url=barang/form_barang">
-                        <button type="button" class="btn btn-primary btn-sm">Tambah</button>
-                    </a> <br>
-                    <table class="table">
+                    <table id="datapegawai" class="table">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -28,6 +28,7 @@ $data_barang = $model->dataBarang();
                                 <th scope="col">Kategori</th>
                                 <th scope="col">Deskripsi</th>
                                 <th scope="col">Kisaran Harga</th>
+                                <th scope="col">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -39,6 +40,13 @@ $data_barang = $model->dataBarang();
                                     <td><?= $row['kategori']; ?></td>
                                     <td><?= $row['deskripsi']; ?></td>
                                     <td><?= $row['kisaran_harga']; ?></td>
+                                    <td>
+                                        <form>
+                                            <a href="index.php?url=Pages/barang/barang_detail&id=<?= $row['kode'] ?>">
+                                                <button type="button" class="btn btn-danger btn-sm">Details</button>
+                                            </a>
+                                        </form>
+                                    </td>
                                 </tr>
                                 <?php $id++; ?>
                             <?php endforeach; ?>
