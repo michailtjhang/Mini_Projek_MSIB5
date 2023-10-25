@@ -13,17 +13,21 @@ $data_kurir = $model->dataKurir();
     </ol>
     <div class="row g-4">
         <div class="col-12">
-            <div class="bg-secondary rounded p-4">
+            <div class="bg-secondary rounded h-100 p-4">
                 <h6 class="mb-4">Table Kurir</h6>
-                <div class="">
-                    <table id="datapegawai" class="table">
+                <a href="index.php?url=kurir_form">
+                    <button class="btn btn-sm btn-primary">Tambah</button>
+                </a>
+                <div class="table-responsive">
+                    <table class="table">
                         <thead>
                             <tr>
-                                <th class="text-info" scope="col">#</th>
-                                <th class="text-info" scope="col">Nama</th>
-                                <th class="text-info" scope="col">Nomor Telepon</th>
-                                <th class="text-info" scope="col">Jadwal</th>
-                                <th class="text-info" scope="col">Aksi</th></th>
+                                <th scope="col">#</th>
+                                <th scope="col">Nama</th>
+                                <th scope="col">Nomor Telepon</th>
+                                <th scope="col">Jadwal</th>
+                                <th scope="col">Aksi</th>
+                                </th>
                             </tr>
                         </thead>
                         <tbody>

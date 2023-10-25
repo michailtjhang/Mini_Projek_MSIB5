@@ -19,8 +19,8 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Data Pengiriman</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="index.php?url=Pages/Kirim/dtKirim" class="dropdown-item">Pengiriman</a>
-                            <a href="index.php?url=Pages/barang/dtbarang" class="dropdown-item">Barang</a>
+                            <a href="index.php?url=dtKirim" class="dropdown-item">Pengiriman</a>
+                            <a href="index.php?url=barang/dtbarang" class="dropdown-item">Barang</a>
                             <a href="index.php?url=dtdetail_penerima" class="dropdown-item">Penerima</a>
                             <a href="index.php?url=dtpembayaran" class="dropdown-item">Pembayaran</a>
                         </div>

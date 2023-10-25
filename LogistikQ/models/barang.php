@@ -19,18 +19,6 @@ class barang{
         return $rs;
     }
 
-    public function getBarang($id) {
-        // mengambil dan melihat table jenis_produk
-        $sql = "SELECT * FROM barang where kode = ?";
-
-        // menggunakan mekanisme prepere statement PDO
-        $ps = $this->koneksi->prepare($sql);
-        $ps->execute([$id]);
-        $rs = $ps->fetch();
-
-        return $rs;
-    }
-
     public function save($data) {
         $sql = "INSERT INTO barang (kode, kategori, deskripsi, kisaran_harga) 
                 VALUES (?, ?, ?, ?)";
