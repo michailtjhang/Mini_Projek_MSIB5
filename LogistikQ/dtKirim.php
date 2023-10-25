@@ -30,7 +30,6 @@ $data_kirim = $model->dataKirim();
                                 <th scope="col">Status Pengiriman</th>
                                 <th scope="col">No Telp Penerima</th>
                                 <th scope="col">Nama Kurir</th>
-                                <th scope="col">Total Bayar</th>
                                 <th scope="col">Aksi</th>
                             </tr>
                         </thead>
@@ -46,9 +45,8 @@ $data_kirim = $model->dataKirim();
                                     <td><?= $row['nama_penerima']; ?></td>
                                     <td><?= $row['lokasi_tujuan']; ?></td>
                                     <td><?= $row['status_pengiriman']; ?></td>
-                                    <td><?= $row['no_telp_penerima']; ?></td>
+                                    <td><?= $row['nomor_telp_penerima']; ?></td>
                                     <td><?= $row['nama_kurir']; ?></td>
-                                    <td><?= $row['total_bayar']; ?></td>
                                     <td>
                                         <form>
                                             <a href="index.php?url=kurir_details&id=<?= $row['id'] ?>">
