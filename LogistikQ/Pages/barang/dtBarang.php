@@ -23,12 +23,12 @@ $data_barang = $model->dataBarang();
                     <table id="datapegawai" class="table">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Kode</th>
-                                <th scope="col">Kategori</th>
-                                <th scope="col">Deskripsi</th>
-                                <th scope="col">Kisaran Harga</th>
-                                <th scope="col">Aksi</th>
+                                <th class="text-info" scope="col">No</th>
+                                <th class="text-info" scope="col">Kode</th>
+                                <th class="text-info" scope="col">Kategori</th>
+                                <th class="text-info" scope="col">Deskripsi</th>
+                                <th class="text-info" scope="col">Kisaran Harga</th>
+                                <th class="text-info" scope="col">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>

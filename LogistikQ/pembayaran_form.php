@@ -15,8 +15,6 @@ if(!empty($idedit)){
 
 ?>
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <form action="pembayaran_controler.php" method="POST">
     <h2 class="text-center mb-5 text-info">Tambah data Pembayaran</h2>
@@ -26,7 +24,7 @@ if(!empty($idedit)){
   <div class="form-group row">
     <label for="text1" class="col-4 col-form-label text-danger">metode</label> 
     <div class="col-8">
-      <input id="text1" name="text1" value="<?= $row['metode']; ?>" placeholder="masukkan metode pembayaran" type="text" class="form-control" required="required">
+      <input  id="text1" name="text1" value="<?= $row['metode']; ?>" placeholder="masukkan metode pembayaran" type="text" class="form-control" required="required">
     </div>
   </div>
   <div class="form-group row">
@@ -40,8 +38,9 @@ if(!empty($idedit)){
     <div class="col-8">
       <select id="select" name="select" class="custom-select">
       <?php foreach($sr_pengiriman as $pengirim){
+        $sel = ($pengirim['id']== $row['pengiriman_id']) ? 'selected ' : '';
         ?>
-        <option value="<?= $pengirim['id'];?>"><?= $pengirim['kode'];?> </option>
+        <option value="<?= $pengirim['id'];?>"  <?= $sel;?>><?= $pengirim['kode'];?></option>
 
         <?php
     }?>

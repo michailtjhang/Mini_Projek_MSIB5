@@ -22,11 +22,11 @@ $data_kurir = $model->dataKurir();
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Nama</th>
-                                <th scope="col">Nomor Telepon</th>
-                                <th scope="col">Jadwal</th>
-                                <th scope="col">Aksi</th>
+                                <th class="text-info" scope="col">No</th>
+                                <th class="text-info" scope="col">Nama</th>
+                                <th class="text-info" scope="col">Nomor Telepon</th>
+                                <th class="text-info" scope="col">Jadwal</th>
+                                <th class="text-info" scope="col">Aksi</th>
                                 </th>
                             </tr>
                         </thead>

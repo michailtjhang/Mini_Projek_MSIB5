@@ -22,31 +22,32 @@ $data_detail_penerimaan = $model->datadetail_penerimaan();
                     <table id="datapegawai" class="table">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">kode</th>
-                                <th scope="col">pengiriman_id</th>
-                                <th scope="col">nama_penerima</th>
-                                <th scope="col">waktu_penerima</th>
-                                <th scope="col">aksi</th>
+                                <th class="text-info" scope="col">No</th>
+                                <th class="text-info" scope="col">kode</th>
+                                <th class="text-info" scope="col">pengiriman_id</th>
+                                <th class="text-info" scope="col">nama_penerima</th>
+                                <th class="text-info" scope="col">waktu_penerima</th>
+                                <th class="text-info" scope="col">aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php $id = 1; ?>
                             <?php foreach ($data_detail_penerimaan as $row) : ?>
                                 <tr>
-                                    <th scope="row"><?= $id; ?></th>
+                                    <td><?= $id; ?></td>
                                     <td><?= $row['kode']; ?></td>
                                     <td><?= $row['pengiriman_id']; ?></td>
                                     <td><?= $row['nama_penerima']; ?></td>
                                     <td><?= $row['waktu_penerima']; ?></td>
-                                </tr>
-                                <td>
+                                    <td>
                                     <form>
                                         <a href="index.php?url=penerimaan&id=<?= $row['id'] ?>">
                                             <button type="button" class="btn btn-danger btn-sm">Details</button>
                                         </a>
                                     </form>
                                 </td>
+                                </tr>
+                               
                                 <?php $id++; ?>
                             <?php endforeach; ?>
                         </tbody>
