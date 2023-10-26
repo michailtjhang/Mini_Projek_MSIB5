@@ -45,6 +45,9 @@ $data_pembayaran = $model->dataPembayaran();
                                             <a href="index.php?url=pembayaran_detail&id=<?= $row['id'] ?>">
                                                 <button type="button" class="btn btn-danger btn-sm">Details</button>
                                             </a>
+                                            <a href="index.php?url=pembayaran_form&idedit=<?= $row['id'] ?>">
+                                                <button type="button"  class="btn btn-danger btn-sm">Update</button>
+                                            </a>
                                         </form>
                                     </td>
                                 </tr>

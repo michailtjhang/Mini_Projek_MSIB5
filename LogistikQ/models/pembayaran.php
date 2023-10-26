@@ -35,6 +35,12 @@ class pembayaran{
         $ps = $this->koneksi->prepare($sql);
         $ps->execute($data);
     }
+    public function ubahpembayaran($data){
+        $sql = "UPDATE pembayaran set metode=?, total_harga=?, pengiriman_id=? where id=?";
+        $ps = $this->koneksi->prepare($sql);
+        $ps->execute($data);
+
+    }
 }
 
 ?>
