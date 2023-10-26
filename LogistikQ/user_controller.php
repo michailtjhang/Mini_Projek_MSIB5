@@ -14,6 +14,10 @@ $model = new user();
 $tombol = $_REQUEST['proses'];
 switch($tombol){
     case 'simpan':$model->simpan($data); break;
+    case 'ubah': $data[] = $_POST['idx']; $model->ubah($data);break;
+    case 'hapus': unset($data);
+    $data[] = $_POST['idx'];
+    $model->hapus($data); break;
     default:
     header('Location:index.php?url=dtUser');
     break;
