@@ -22,18 +22,18 @@ class kurir
         return $rs;
     }
 
-    // public function getkurir($id)
-    // {
-    //     // mengambil dan melihat table jenis_produk
-    //     $sql = "SELECT * FROM kurir WHERE id=?";
+    public function getkurir($id)
+    {
+        // mengambil dan melihat table jenis_produk
+        $sql = "SELECT * FROM kurir WHERE id=?";
 
-    //     // menggunakan mekanisme prepere statement PDO
-    //     $ps = $this->koneksi->prepare($sql);
-    //     $ps->execute([$id]);
-    //     $rs = $ps->fetch();
+        // menggunakan mekanisme prepere statement PDO
+        $ps = $this->koneksi->prepare($sql);
+        $ps->execute([$id]);
+        $rs = $ps->fetch();
 
-    //     return $rs;
-    // }
+        return $rs;
+    }
 
     public function simpan($data)
     {

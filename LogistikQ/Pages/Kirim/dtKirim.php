@@ -59,7 +59,7 @@ $data_kirim = $model->dataKirim();
                                             <a href="index.php?url=Pages/Kirim/kirim_detail&id=<?= $row['id'] ?>">
                                                 <button type="button" class="btn btn-primary btn-sm">Details</button>
                                             </a>
-                                            <input type="hidden" name="idx" value="<?= $idedit ?>">
+                                            <input type="hidden" name="idx" value="<?= $row['id'] ?>">
                                         </form>
                                     </td>
                                 </tr>
