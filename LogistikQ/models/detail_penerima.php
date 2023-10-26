@@ -41,15 +41,4 @@ class detail_penerimaan
         $ps = $this->koneksi->prepare($sql);
         $ps->execute($data);
     }
-    public function ubah($data){
-        $sql = "UPDATE detail_penerimaan SET kode=?, pengiriman_id=?, nama_penerima=?, waktu_penerima=?
-        WHERE id=?";
-        $ps = $this->koneksi->prepare($sql);
-        $ps->execute($data);
-    }
-    public function hapus($data){
-        $sql = "DELETE FROM user WHERE id=?";
-        $ps = $this->koneksi->prepare($sql);
-        $ps->execute($data);
-    }
 }

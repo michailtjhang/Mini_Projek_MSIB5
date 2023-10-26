@@ -27,7 +27,6 @@ $data_user = $model->dataUser();
                                 <th class="text-info" scope="col">password</th>
                                 <th class="text-info" scope="col">nomor_telepon</th>
                                 <th class="text-info" scope="col">alamat</th>
-                                <th class="text-info" scope="col">aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -40,19 +39,6 @@ $data_user = $model->dataUser();
                                     <td><?= $row['password']; ?></td>
                                     <td><?= $row['nomor_telepon']; ?></td>
                                     <td><?= $row['alamat']; ?></td>
-                                    <td>
-                                    <form action="user_controller.php" method="POST">
-                                            <a href="index.php?url=detail_user&id=<?= $row['id'] ?>">
-                                                <button type="button" class="btn btn-success btn-sm">Details</button>
-                                            </a>
-                                            <a href="index.php?url=user_form&idedit=<?= $row['id'] ?>">
-                                                <button type="button"  class="btn btn-warning btn-sm">Update</button>
-                                            </a>
-                                            <button type="submit" class="btn btn-danger btn-sm" name="proses" value="hapus"
-                                            onclick="return confirm('Apakah anda yakin ingin menghapusnya?')">Delete</button>
-                                            <input type="hidden" name="idx" value="<?= $row['id']?>">
-                                        </form>
-                                    </td>
                                 </tr>
                                 <?php $id++; ?>
                             <?php endforeach; ?>

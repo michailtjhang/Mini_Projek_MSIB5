@@ -16,7 +16,7 @@ $data_kurir = $model->dataKurir();
             <div class="bg-secondary rounded h-100 p-4">
                 <h6 class="mb-4">Table Kurir</h6>
                 <a href="index.php?url=kurir_form">
-                    <button class="btn btn-sm btn-primary">Tambah</button>
+                    <button class="btn btn-sm btn-primary mb-3">Tambah</button>
                 </a>
                 <div class="table-responsive">
                     <table class="table">
@@ -39,10 +39,13 @@ $data_kurir = $model->dataKurir();
                                     <td><?= $row['nomor_telepon']; ?></td>
                                     <td><?= $row['jadwal']; ?></td>
                                     <td>
-                                        <form>
-                                            <a href="index.php?url=kurir_details&id=<?= $row['id'] ?>">
-                                                <button type="button" class="btn btn-danger btn-sm">Details</button>
+                                        <form action="kurir_controller.php" method="POST">
+                                            <a href="index.php?url=kurir_form&idedit=<?= $row['id'] ?>">
+                                                <button type="button" class="btn btn-warning btn-sm">Ubah</button>
                                             </a>
+                                            <button type="submit" class="btn btn-danger btn-sm" name="proses" value="hapus" onclick="return confirm('Yakin ingin menghapus')">Hapus</button>
+                                            <input type="hidden" name="idx" value="<?= $row['id'] ?>">
+
                                         </form>
                                     </td>
                                 </tr>
