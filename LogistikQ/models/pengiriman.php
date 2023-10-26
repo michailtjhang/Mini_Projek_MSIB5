@@ -48,6 +48,23 @@ class pengiriman{
         $ps = $this->koneksi->prepare($sql);
         $ps->execute($data);
     }
+
+    public function ubah($data) {
+        $sql = "UPDATE pengiriman SET kode = ?, id_user = ? , kode_barang = ?, tanggal = ?,
+                nama_penerima = ?, lokasi_tujuan = ?, status_pengiriman = ?, 
+                nomor_telp_penerima = ?, kurir_id = ?
+                WHERE id = ?";
+
+        $ps = $this->koneksi->prepare($sql);
+        $ps->execute($data);
+    }
+
+    public function hapus($data) {
+        $sql = "DELETE FROM pengiriman WHERE id = ?";
+
+        $ps = $this->koneksi->prepare($sql);
+        $ps->execute($data);
+    }
 }
 
 ?>

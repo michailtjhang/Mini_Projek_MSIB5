@@ -38,6 +38,21 @@ class barang{
         $ps = $this->koneksi->prepare($sql);
         $ps->execute($data);
     }
+
+    public function ubah($data) {
+        $sql = "UPDATE barang SET kategori = ?, deskripsi = ?, kisaran_harga = ? 
+        WHERE kode = ?";
+
+        $ps = $this->koneksi->prepare($sql);
+        $ps->execute($data);
+    }
+
+    public function hapus($data) {
+        $sql = "DELETE FROM barang WHERE kode = ?";
+
+        $ps = $this->koneksi->prepare($sql);
+        $ps->execute($data);
+    }
 }
 
 ?>
