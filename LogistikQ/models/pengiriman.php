@@ -25,7 +25,7 @@ class pengiriman{
 
     public function getKirim($id) {
         // mengambil dan melihat table jenis_produk
-        $sql = "SELECT p.id, p.kode, p.kode_barang, p.tanggal, p.nama_penerima, p.lokasi_tujuan, p.status_pengiriman, p.nomor_telp_penerima,
+        $sql = "SELECT p.*,
                 u.nama AS nama_user, k.nama AS nama_kurir
                 FROM pengiriman p
                 INNER JOIN user u ON u.id = p.id_user

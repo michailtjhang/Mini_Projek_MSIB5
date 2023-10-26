@@ -40,7 +40,7 @@ class barang{
     }
 
     public function ubah($data) {
-        $sql = "UPDATE barang SET kategori = ?, deskripsi = ?, kisaran_harga = ? 
+        $sql = "UPDATE barang SET kode = ?, kategori = ?, deskripsi = ?, kisaran_harga = ? 
         WHERE kode = ?";
 
         $ps = $this->koneksi->prepare($sql);
