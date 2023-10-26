@@ -14,7 +14,7 @@ $data_pembayaran = $model->dataPembayaran();
     </ol>
     <div class="row g-4">
         <div class="col-12">
-            <div class="bg-secondary rounded h-100 p-4">
+            <div class="bg-secondary rounded overflow-hidden h-100 p-4">
                 <h6 class="mb-4">Table Pembayaran</h6>
                 <a href="index.php?url=pembayaran_form">
                     <button type="button" class="btn btn-primary btn-sm">Tambah</button>
@@ -24,12 +24,11 @@ $data_pembayaran = $model->dataPembayaran();
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Metode Pembayaran</th>
-                                <th scope="col">Total_Harga</th>
-                                <th scope="col">id pengiriman</th>
-                                <th scope='col'>Aksi</th>
-                                <th></th>
+                                <th class="text-info" scope="col">#</th>
+                                <th class="text-info" scope="col">Metode Pembayaran</th>
+                                <th class="text-info" scope="col">ToTal_Harga</th>
+                                <th class="text-info" scope="col">id pengiriman</th>
+                                <th class="text-info" scope='col'>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
