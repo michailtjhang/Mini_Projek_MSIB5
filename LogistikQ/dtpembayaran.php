@@ -17,14 +17,14 @@ $data_pembayaran = $model->dataPembayaran();
             <div class="bg-secondary rounded overflow-hidden h-100 p-4">
                 <h6 class="mb-4">Table Pembayaran</h6>
                 <a href="index.php?url=pembayaran_form">
-                    <button type="button" class="btn btn-primary btn-sm">Tambah</button>
+                    <button type="button" class="btn btn-primary btn-sm mb-3">Tambah</button>
                 </a>
 
                 <div class="table-responsive">
-                    <table class="table">
+                    <table id="datapegawai" class="table">
                         <thead>
                             <tr>
-                                <th class="text-info" scope="col">#</th>
+                                <th class="text-info" scope="col">No</th>
                                 <th class="text-info" scope="col">Metode Pembayaran</th>
                                 <th class="text-info" scope="col">ToTal_Harga</th>
                                 <th class="text-info" scope="col">id pengiriman</th>
@@ -44,10 +44,10 @@ $data_pembayaran = $model->dataPembayaran();
                                             <a href="index.php?url=pembayaran_detail&id=<?= $row['id'] ?>">
                                                 <button type="button" class="btn btn-danger btn-sm">Details</button>
                                             </a>
+                                            <a href="index.php?url=pembayaran_form&idedit=<?= $row['id'] ?>">
+                                                <button type="button"  class="btn btn-danger btn-sm">Update</button>
+                                            </a>
                                         </form>
-                                    </td>
-                                    <td>
-
                                     </td>
                                 </tr>
                                 <?php $d++; ?>

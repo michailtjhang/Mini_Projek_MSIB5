@@ -23,17 +23,17 @@ $data_kirim = $model->dataKirim();
                     <table id="datapegawai" class="table">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Kode</th>
-                                <th scope="col">Nama User</th>
-                                <th scope="col">Kode Barang</th>
-                                <th scope="col">Tanggal</th>
-                                <th scope="col">Nama Penerima</th>
-                                <th scope="col">Lokasi Tujuan</th>
-                                <th scope="col">Status Pengiriman</th>
-                                <th scope="col">No Telp Penerima</th>
-                                <th scope="col">Nama Kurir</th>
-                                <th scope="col">Aksi</th>
+                                <th class="text-info" scope="col">NO</th>
+                                <th class="text-info" scope="col">Kode</th>
+                                <th class="text-info" scope="col">Nama User</th>
+                                <th class="text-info" scope="col">Kode Barang</th>
+                                <th class="text-info" scope="col">Tanggal</th>
+                                <th class="text-info" scope="col">Nama Penerima</th>
+                                <th class="text-info" scope="col">Lokasi Tujuan</th>
+                                <th class="text-info" scope="col">Status Pengiriman</th>
+                                <th class="text-info" scope="col">No Telp Penerima</th>
+                                <th class="text-info" scope="col">Nama Kurir</th>
+                                <th class="text-info" scope="col">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
