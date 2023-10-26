@@ -41,11 +41,6 @@ class pembayaran{
         $ps->execute($data);
 
     }
-    public function hapuspembayaran($data){
-        $sql = "DELETE FROM pembayaran WHERE id=?";
-        $ps = $this->koneksi->prepare($sql);
-        $ps->execute($data);
-    }
 }
 
 ?>
