@@ -13,6 +13,9 @@ $tombol= $_REQUEST['submit'];
 switch($tombol){
     case 'simpan': $model->simpandata($data); break;
     case 'ubah' : $data[] = $_POST['idx']; $model->ubahpembayaran($data); break;
+    case 'hapus' : unset($data); 
+    $data[] = $_POST['idx']; 
+    $model->hapuspembayaran($data); break;
     default;
     header('location:index.php?url=dtpembayaran');
     break;

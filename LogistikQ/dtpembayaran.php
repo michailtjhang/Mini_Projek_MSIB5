@@ -40,13 +40,16 @@ $data_pembayaran = $model->dataPembayaran();
                                     <td><?= $row['total_harga']; ?></td>
                                     <td><?= $row['pengiriman_id']; ?></td>
                                     <td>
-                                        <form>
+                                        <form action="pembayaran_controler.php" method="POST">
                                             <a href="index.php?url=pembayaran_detail&id=<?= $row['id'] ?>">
                                                 <button type="button" class="btn btn-danger btn-sm">Details</button>
                                             </a>
                                             <a href="index.php?url=pembayaran_form&idedit=<?= $row['id'] ?>">
                                                 <button type="button"  class="btn btn-danger btn-sm">Update</button>
                                             </a>
+                                            <input type="submit" name="submit" class="btn btn-danger btn-sm" 
+                                            value="hapus" onclick="return confirm('Anda yakin ingin menghapus data ini ?')">
+                                            <input type="hidden" name="idx" value="<?=$row['id']; ?>">
                                         </form>
                                     </td>
                                 </tr>
