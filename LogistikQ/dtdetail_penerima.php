@@ -1,7 +1,7 @@
 <?php
 
-$model =  new detail_penerima();
-$data_detail_penerima = $model->datadetail_penerima();
+$model =  new detail_penerimaan();
+$data_detail_penerimaan = $model->datadetail_penerimaan();
 
 ?>
 
@@ -16,8 +16,10 @@ $data_detail_penerima = $model->datadetail_penerima();
         <div class="col-12">
             <div class="bg-secondary rounded h-100 p-4">
                 <h6 class="mb-4">Table Detail Penerima</h6>
+                <a href="index.php?url=detail_penerima_form">
+                <button class="btn btn-sm btn-primary">Tambah</button></a>
                 <div class="table-responsive">
-                    <table class="table">
+                    <table id="datapegawai" class="table">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -25,11 +27,12 @@ $data_detail_penerima = $model->datadetail_penerima();
                                 <th scope="col">pengiriman_id</th>
                                 <th scope="col">nama_penerima</th>
                                 <th scope="col">waktu_penerima</th>
+                                <th scope="col">aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php $id = 1; ?>
-                            <?php foreach ($data_detail_penerima as $row) : ?>
+                            <?php foreach ($data_detail_penerimaan as $row) : ?>
                                 <tr>
                                     <th scope="row"><?= $id; ?></th>
                                     <td><?= $row['kode']; ?></td>
@@ -37,6 +40,13 @@ $data_detail_penerima = $model->datadetail_penerima();
                                     <td><?= $row['nama_penerima']; ?></td>
                                     <td><?= $row['waktu_penerima']; ?></td>
                                 </tr>
+                                <td>
+                                    <form>
+                                        <a href="index.php?url=penerimaan&id=<?= $row['id'] ?>">
+                                            <button type="button" class="btn btn-danger btn-sm">Details</button>
+                                        </a>
+                                    </form>
+                                </td>
                                 <?php $id++; ?>
                             <?php endforeach; ?>
                         </tbody>

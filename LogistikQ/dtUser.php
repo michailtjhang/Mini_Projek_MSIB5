@@ -16,9 +16,9 @@ $data_user = $model->dataUser();
             <div class="bg-secondary rounded h-100 p-4">
                 <h6 class="mb-4">Table User</h6>
                 <a href="index.php?url=user_form">
-                <button class="btn btn-sm btn-primary">Tambah</button></a>
+                <button class="btn btn-sm btn-primary mb-3">Tambah</button></a>
                 <div class="table-responsive">
-                    <table class="table">
+                    <table id="datapegawai" class="table">
                         <thead>
                             <tr>
                                 <th scope="col">no</th>
