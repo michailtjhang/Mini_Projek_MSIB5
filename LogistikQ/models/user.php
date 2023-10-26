@@ -40,17 +40,5 @@ class user
         $ps = $this->koneksi->prepare($sql);
         $ps->execute($data);
     }
-    public function ubah($data){
-        $sql = "UPDATE user SET nama=?, username=?, password=?, nomor_telepon=?, alamat=?
-        WHERE id=?";
-        $ps = $this->koneksi->prepare($sql);
-        $ps->execute($data);
-    }
-    public function hapus($data){
-        $sql = "DELETE FROM user WHERE id=?";
-        $ps = $this->koneksi->prepare($sql);
-        $ps->execute($data);
-    }
 }
-
 ?>

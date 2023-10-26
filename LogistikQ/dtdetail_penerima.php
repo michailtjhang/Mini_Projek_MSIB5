@@ -44,12 +44,6 @@ $data_detail_penerimaan = $model->datadetail_penerimaan();
                                         <a href="index.php?url=penerimaan&id=<?= $row['id'] ?>">
                                             <button type="button" class="btn btn-danger btn-sm">Details</button>
                                         </a>
-                                        <a href="index.php?url=user_form&idedit=<?= $row['id'] ?>">
-                                                <button type="button"  class="btn btn-warning btn-sm">Update</button>
-                                            </a>
-                                            <button type="submit" class="btn btn-danger btn-sm" name="proses" value="hapus"
-                                            onclick="return confirm('Apakah anda yakin ingin menghapusnya?')">Delete</button>
-                                            <input type="hidden" name="idx" value="<?= $row['id']?>">
                                     </form>
                                 </td>
                                 </tr>

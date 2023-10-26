@@ -35,10 +35,24 @@ class kurir
         return $rs;
     }
 
+    public function ubah($data)
+    {
+        $sql = "UPDATE kurir set nama=?, nomor_telepon=?, jadwal=? WHERE id = ?";
+        $ps = $this->koneksi->prepare($sql);
+        $ps->execute($data);
+    }
+
     public function simpan($data)
     {
         $sql = "INSERT INTO kurir (nama, nomor_telepon, jadwal)
         VALUES (?,?,?)";
+        $ps = $this->koneksi->prepare($sql);
+        $ps->execute($data);
+    }
+
+    public function hapus($data)
+    {
+        $sql = "DELETE FROM kurir WHERE id=?";
         $ps = $this->koneksi->prepare($sql);
         $ps->execute($data);
     }
