@@ -14,20 +14,35 @@ $nomor_telp_penerima = $_POST['nomor_telp_penerima'];
 $kurir_id = $_POST['kurir_id'];
 
 $data = [
-    $kode, $id_user, $kode_barang, $tanggal, 
-    $nama_penerima, $lokasi_tujuan, $status_pengiriman,
-    $nomor_telp_penerima, $kurir_id
+    $kode,
+    $id_user,
+    $kode_barang,
+    $tanggal,
+    $nama_penerima,
+    $lokasi_tujuan,
+    $status_pengiriman,
+    $nomor_telp_penerima,
+    $kurir_id
 ];
 
-$model= new pengiriman();
-$tombol= $_REQUEST['proses'];
+$model = new pengiriman();
+$tombol = $_REQUEST['proses'];
 
-switch($tombol){
-    case 'save': 
+switch ($tombol) {
+    case 'save':
         $model->save($data);
         break;
-        default;
+    case 'ubah':
+        $data[] = $_POST['idx'];
+        $model->ubah($data);
+        break;
+    case 'hapus':
+        unset($data);
+        $data[] = $_POST['idx'];
+        $model->hapus($data);
+        break;
+    default;
         header('location:../../index.php?url=Pages/Kirim/dtKirim');
         break;
-    }
+}
 header('location:../../index.php?url=Pages/Kirim/dtKirim');
