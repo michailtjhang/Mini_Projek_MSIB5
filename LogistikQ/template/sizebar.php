@@ -15,12 +15,12 @@
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="index.php?url=dashboard" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Form</a>
+                    <a href="index.php?url=pembayaran_form" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Form</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Data Pengiriman</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="index.php?url=dtKirim" class="dropdown-item">Pengiriman</a>
-                            <a href="index.php?url=dtbarang" class="dropdown-item">Barang</a>
+                            <a href="index.php?url=barang/dtbarang" class="dropdown-item">Barang</a>
                             <a href="index.php?url=dtdetail_penerima" class="dropdown-item">Penerima</a>
                             <a href="index.php?url=dtpembayaran" class="dropdown-item">Pembayaran</a>
                         </div>
