@@ -17,21 +17,21 @@ $data_detail_penerima = $model->datadetail_penerima();
             <div class="bg-secondary rounded h-100 p-4">
                 <h6 class="mb-4">Table Detail Penerima</h6>
                 <div class="table-responsive">
-                    <table id="datapegawai" class="table">
+                    <table class="table">
                         <thead>
                             <tr>
-                                <th class="text-info" scope="col">#</th>
-                                <th class="text-info" scope="col">kode</th>
-                                <th class="text-info" scope="col">pengiriman_id</th>
-                                <th class="text-info" scope="col">nama_penerima</th>
-                                <th class="text-info" scope="col">waktu_penerima</th>
+                                <th scope="col">#</th>
+                                <th scope="col">kode</th>
+                                <th scope="col">pengiriman_id</th>
+                                <th scope="col">nama_penerima</th>
+                                <th scope="col">waktu_penerima</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php $id = 1; ?>
                             <?php foreach ($data_detail_penerima as $row) : ?>
                                 <tr>
-                                    <td><?= $id; ?></td>
+                                    <th scope="row"><?= $id; ?></th>
                                     <td><?= $row['kode']; ?></td>
                                     <td><?= $row['pengiriman_id']; ?></td>
                                     <td><?= $row['nama_penerima']; ?></td>

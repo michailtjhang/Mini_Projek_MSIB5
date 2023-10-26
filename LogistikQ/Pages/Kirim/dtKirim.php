@@ -14,10 +14,13 @@ $data_kirim = $model->dataKirim();
     </ol>
     <div class="row g-4">
         <div class="col-12">
-            <div class="bg-secondary rounded h-100 p-4">
+            <div class="bg-secondary rounded overflow-hidden h-100 p-4">
                 <h6 class="mb-4">Table Pengiriman</h6>
+                <a href="index.php?url=Pages/Kirim/form_kirim">
+                    <button type="button" class="btn btn-primary btn-sm mb-3">Tambah</button>
+                </a>
                 <div class="table-responsive">
-                    <table class="table">
+                    <table id="datapegawai" class="table">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -49,7 +52,7 @@ $data_kirim = $model->dataKirim();
                                     <td><?= $row['nama_kurir']; ?></td>
                                     <td>
                                         <form>
-                                            <a href="index.php?url=kurir_details&id=<?= $row['id'] ?>">
+                                            <a href="index.php?url=Pages/Kirim/kirim_detail&id=<?= $row['id'] ?>">
                                                 <button type="button" class="btn btn-danger btn-sm">Details</button>
                                             </a>
                                         </form>
