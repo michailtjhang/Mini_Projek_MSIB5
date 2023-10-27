@@ -14,7 +14,7 @@ if (!empty($idedit)) {
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <h2 align="center" class="mt-4">Form Kurir</h2>
-<form action="kurir_controller.php" method="POST">
+<form action="Pages/kurir/kurir_controller.php" method="POST">
     <div class="form-group row mb-1">
         <label for="text1" class="col-4 col-form-label">Nama</label>
         <div class="col-8">

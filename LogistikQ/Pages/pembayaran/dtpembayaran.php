@@ -16,7 +16,7 @@ $data_pembayaran = $model->dataPembayaran();
         <div class="col-12">
             <div class="bg-secondary rounded overflow-hidden h-100 p-4">
                 <h6 class="mb-4">Table Pembayaran</h6>
-                <a href="index.php?url=pembayaran_form">
+                <a href="index.php?url=Pages/pembayaran/pembayaran_form">
                     <button type="button" class="btn btn-primary btn-sm mb-3">Tambah</button>
                 </a>
 
@@ -40,13 +40,16 @@ $data_pembayaran = $model->dataPembayaran();
                                     <td><?= $row['total_harga']; ?></td>
                                     <td><?= $row['pengiriman_id']; ?></td>
                                     <td>
-                                        <form>
-                                            <a href="index.php?url=pembayaran_detail&id=<?= $row['id'] ?>">
-                                                <button type="button" class="btn btn-danger btn-sm">Details</button>
+                                        <form action="Pages/pembayaran/pembayaran_controler.php" method="POST">
+                                            <a href="index.php?url=Pages/pembayaran/pembayaran_form&idedit=<?= $row['id'] ?>">
+                                                <button type="button"  class="btn btn-success btn-sm">Update</button>
                                             </a>
-                                            <a href="index.php?url=pembayaran_form&idedit=<?= $row['id'] ?>">
-                                                <button type="button"  class="btn btn-danger btn-sm">Update</button>
+                                            <input type="submit" name="submit" class="btn btn-warning btn-sm" 
+                                            value="hapus" onclick="return confirm('Anda yakin ingin menghapus data ini ?')">
+                                            <a href="index.php?url=Pages/pembayaran/pembayaran_detail&id=<?= $row['id'] ?>">
+                                                <button type="button" class="btn btn-primary btn-sm">Details</button>
                                             </a>
+                                            <input type="hidden" name="idx" value="<?=$row['id']; ?>">
                                         </form>
                                     </td>
                                 </tr>

@@ -16,7 +16,7 @@ if(!empty($idedit)){
 ?>
 
 
-<form action="pembayaran_controler.php" method="POST">
+<form action="Pages/pembayaran/pembayaran_controler.php" method="POST">
     <h2 class="text-center mb-5 text-info">Tambah data Pembayaran</h2>
   <div class="form-group row">
    
@@ -56,7 +56,7 @@ if(!empty($idedit)){
       <button name="submit" type="submit" value='simpan' class="btn btn-primary">Submit</button>
       <?php
       }else {?>
-      <button name="submit" type="submit" value='ubah' class="btn btn-primary">Update</button>
+      <button name="submit" type="submit" value='ubah' class="btn btn-success">Update</button>
       <?php } ?>
       <input type="hidden" name="idx" value="<?= $idedit; ?>">
     </div>

@@ -1,6 +1,6 @@
 <?php
-include_once 'databases/koneksi.php';
-include_once 'models/kurir.php';
+include_once '../../databases/koneksi.php';
+include_once '../../models/kurir.php';
 
 $nama = $_POST['nama'];
 $nomor_telepon = $_POST['nomor_telepon'];
@@ -24,7 +24,7 @@ switch ($tombol) {
         $model->hapus($data);
         break;
     default:
-        header('Location:index.php?url=dtkurir');
+        header('Location:../../index.php?url=Pages/kurir/dtkurir');
         break;
 }
-header('Location:index.php?url=dtkurir');
+header('Location:../../index.php?url=Pages/kurir/dtkurir');
