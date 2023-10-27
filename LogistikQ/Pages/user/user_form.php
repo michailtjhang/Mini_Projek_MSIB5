@@ -17,7 +17,7 @@ if (!empty($idedit)){
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <h2 align="center">Form User</h2>
-<form action = "user_controller.php" method="POST">
+<form action = "Pages/user/user_controller.php" method="POST">
   <div class="form-group row">
     <label for="text1" class="col-4 col-form-label">Nama</label> 
     <div class="col-8">

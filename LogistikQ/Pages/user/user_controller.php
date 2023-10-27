@@ -1,6 +1,6 @@
 <?php
-include_once 'databases/koneksi.php';
-include_once 'models/user.php';
+include_once '../../databases/koneksi.php';
+include_once '../../models/user.php';
 
 $nama = $_POST['nama'];
 $username = $_POST['username'];
@@ -19,9 +19,9 @@ switch($tombol){
     $data[] = $_POST['idx'];
     $model->hapus($data); break;
     default:
-    header('Location:index.php?url=dtUser');
+    header('Location:../../index.php?url=Pages/user/dtUser');
     break;
 }
-header('Location:index.php?url=dtUser');
+header('Location:../../index.php?url=Pages/user/dtUser');
 
 ?>
