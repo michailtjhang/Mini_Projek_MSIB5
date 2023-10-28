@@ -13,7 +13,7 @@ $data_kurir = $model->dataKurir();
     </ol>
     <div class="row g-4">
         <div class="col-12">
-            <div class="bg-secondary rounded h-100 p-4">
+            <div class="bg-light rounded h-100 p-4">
                 <h6 class="mb-4">Table Kurir</h6>
                 <a href="index.php?url=Pages/kurir/kurir_form">
                     <button class="btn btn-sm btn-primary mb-3">Tambah</button>
@@ -22,11 +22,11 @@ $data_kurir = $model->dataKurir();
                     <table class="table">
                         <thead>
                             <tr>
-                                <th class="text-info" scope="col">No</th>
-                                <th class="text-info" scope="col">Nama</th>
-                                <th class="text-info" scope="col">Nomor Telepon</th>
-                                <th class="text-info" scope="col">Jadwal</th>
-                                <th class="text-info" scope="col">Aksi</th>
+                                <th class="text-bold" scope="col">No</th>
+                                <th class="text-bold" scope="col">Nama</th>
+                                <th class="text-bold" scope="col">Nomor Telepon</th>
+                                <th class="text-bold" scope="col">Jadwal</th>
+                                <th class="text-bold" scope="col">Aksi</th>
                                 </th>
                             </tr>
                         </thead>
@@ -41,9 +41,9 @@ $data_kurir = $model->dataKurir();
                                     <td>
                                         <form action="Pages/kurir/kurir_controller.php" method="POST">
                                             <a href="index.php?url=Pages/kurir/kurir_form&idedit=<?= $row['id'] ?>">
-                                                <button type="button" class="btn btn-success btn-sm">Ubah</button>
+                                                <button type="button" class="btn btn-warning btn-sm">Ubah</button>
                                             </a>
-                                            <button type="submit" class="btn btn-warning btn-sm" name="proses" value="hapus" onclick="return confirm('Yakin ingin menghapus')">Hapus</button>
+                                            <button type="submit" class="btn btn-danger btn-sm" name="proses" value="hapus" onclick="return confirm('Yakin ingin menghapus')">Hapus</button>
                                             <input type="hidden" name="idx" value="<?= $row['id'] ?>">
                                         </form>
                                     </td>
