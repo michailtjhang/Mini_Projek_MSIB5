@@ -28,7 +28,7 @@ $data_barang = $model->dataBarang();
                                 <th class="text-info" scope="col">Kategori</th>
                                 <th class="text-info" scope="col">Deskripsi</th>
                                 <th class="text-info" scope="col">Kisaran Harga</th>
-                                <th class="text-info" scope="col">Aksi</th>
+                                <th class="text-info text-center" scope="col">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>

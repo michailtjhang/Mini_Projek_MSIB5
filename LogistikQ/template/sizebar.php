@@ -24,6 +24,7 @@
                             <a href="index.php?url=Pages/detail_penerima/dtdetail_penerima" class="dropdown-item">Penerima</a>
                             <a href="index.php?url=Pages/pembayaran/dtpembayaran" class="dropdown-item">Pembayaran</a>
                             <a href="index.php?url=Pages/kurir/dtkurir" class="dropdown-item">Kurir</a>
+                            <a href="index.php?url=Pages/user/user_form" class="dropdown-item">Form Pelanggan</a>
                             <a href="index.php?url=Pages/user/dtUser" class="dropdown-item">Pelanggan</a>
                         </div>
                     </div>

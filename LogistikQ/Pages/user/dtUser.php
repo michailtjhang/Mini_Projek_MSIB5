@@ -15,8 +15,6 @@ $data_user = $model->dataUser();
         <div class="col-12">
             <div class="bg-secondary rounded h-100 p-4">
                 <h6 class="mb-4">Table User</h6>
-                <a href="index.php?url=Pages/user/user_form">
-                <button class="btn btn-sm btn-primary mb-3">Tambah</button></a>
                 <div class="table-responsive">
                     <table id="datapegawai" class="table">
                         <thead>
@@ -27,7 +25,7 @@ $data_user = $model->dataUser();
                                 <th class="text-info" scope="col">password</th>
                                 <th class="text-info" scope="col">nomor_telepon</th>
                                 <th class="text-info" scope="col">alamat</th>
-                                <th class="text-info" scope="col">aksi</th>
+                                <th class="text-info text-center" scope="col">aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -46,11 +44,10 @@ $data_user = $model->dataUser();
                                                 <button type="button" class="btn btn-success btn-sm">Details</button>
                                             </a>
                                             <a href="index.php?url=Pages/user/user_form&idedit=<?= $row['id'] ?>">
-                                                <button type="button"  class="btn btn-warning btn-sm">Update</button>
+                                                <button type="button" class="btn btn-warning btn-sm">Update</button>
                                             </a>
-                                            <button type="submit" class="btn btn-danger btn-sm" name="proses" value="hapus"
-                                            onclick="return confirm('Apakah anda yakin ingin menghapusnya?')">Delete</button>
-                                            <input type="hidden" name="idx" value="<?= $row['id']?>">
+                                            <button type="submit" class="btn btn-danger btn-sm" name="proses" value="hapus" onclick="return confirm('Apakah anda yakin ingin menghapusnya?')">Delete</button>
+                                            <input type="hidden" name="idx" value="<?= $row['id'] ?>">
                                         </form>
                                     </td>
                                 </tr>
