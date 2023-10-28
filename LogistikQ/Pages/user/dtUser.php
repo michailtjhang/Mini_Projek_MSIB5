@@ -13,7 +13,7 @@ $data_user = $model->dataUser();
     </ol>
     <div class="row g-4">
         <div class="col-12">
-            <div class="bg-secondary rounded h-100 p-4">
+            <div class="bg-light rounded h-100 p-4">
                 <h6 class="mb-4">Table User</h6>
                 <a href="index.php?url=Pages/user/user_form">
                 <button class="btn btn-sm btn-primary mb-3">Tambah</button></a>
@@ -21,13 +21,13 @@ $data_user = $model->dataUser();
                     <table id="datapegawai" class="table">
                         <thead>
                             <tr>
-                                <th class="text-info" scope="col">no</th>
-                                <th class="text-info" scope="col">nama</th>
-                                <th class="text-info" scope="col">username</th>
-                                <th class="text-info" scope="col">password</th>
-                                <th class="text-info" scope="col">nomor_telepon</th>
-                                <th class="text-info" scope="col">alamat</th>
-                                <th class="text-info" scope="col">aksi</th>
+                                <th class="text-bold" scope="col">no</th>
+                                <th class="text-bold" scope="col">nama</th>
+                                <th class="text-bold" scope="col">username</th>
+                                <th class="text-bold" scope="col">password</th>
+                                <th class="text-bold" scope="col">nomor_telepon</th>
+                                <th class="text-bold" scope="col">alamat</th>
+                                <th class="text-bold" scope="col">aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -43,7 +43,7 @@ $data_user = $model->dataUser();
                                     <td>
                                         <form action="Pages/user/user_controller.php" method="POST">
                                             <a href="index.php?url=Pages/user/detail_user&id=<?= $row['id'] ?>">
-                                                <button type="button" class="btn btn-success btn-sm">Details</button>
+                                                <button type="button" class="btn btn-info btn-sm">Details</button>
                                             </a>
                                             <a href="index.php?url=Pages/user/user_form&idedit=<?= $row['id'] ?>">
                                                 <button type="button"  class="btn btn-warning btn-sm">Update</button>
