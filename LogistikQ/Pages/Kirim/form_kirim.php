@@ -27,7 +27,7 @@ if( !empty($idedit) ) {
     <!-- form start -->
     <form action="Pages/Kirim/control_kirim.php" method="POST">
         <div class="col-sm-12 col-xl-8">
-            <div class="bg-light rounded h-100 p-4">
+            <div class="bg-secondary rounded h-100 p-4">
                 <h6 class="mb-4">Form Pengiriman</h6>
                 <div class="form-floating mb-3">
                     <input type="text" name="kode" class="form-control" id="kode" placeholder="Masukkan Kode Pengiriman" value="<?= $kirim['kode'] ?>">
@@ -87,7 +87,7 @@ if( !empty($idedit) ) {
                 <?php if (empty($idedit)) { ?>
                     <button name="proses" value="save" type="submit" class="btn btn-primary">Submit</button>
                 <?php } else { ?>
-                    <button type="submit" name="proses" value="ubah" class="btn btn-warning">Ubah</button>
+                    <button type="submit" name="proses" value="ubah" class="btn btn-success">Ubah</button>
                 <?php } ?>
                 <input type="hidden" name="idx" value="<?= $idedit ?>">
             </div>

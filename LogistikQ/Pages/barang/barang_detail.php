@@ -7,7 +7,7 @@ $produk = $model->getBarang($id);
 ?>
 
 
-    <div class="container px-4 px-lg-5 my-5 bg-light">
+    <div class="container px-4 px-lg-5 my-5 bg-secondary text-white">
         <div class="row gx-4 gx-lg-5 align-items-center" style="padding: 30px 0;">
             <div class="col-md-6"><img class="card-img-top mb-3 mb-md-0"
                     src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." /></div>
@@ -26,7 +26,8 @@ $produk = $model->getBarang($id);
                 </div>
                 <p class="lead">Deskripsi : <br> <?= $produk['deskripsi'] ?></p>
                 <div class="d-flex">
-                    <a href="index.php?url=Pages/barang/dtbarang"><button type="button" class="btn btn-primary">Kembali</button></a>
+                    <button type="button" class="btn btn-sm btn-outline-info"><a
+                            href="index.php?url=Pages/barang/dtbarang">Kembali</a></button>
                 </div>
             </div>
         </div>
