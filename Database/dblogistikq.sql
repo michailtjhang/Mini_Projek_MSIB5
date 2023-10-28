@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 28 Okt 2023 pada 06.05
--- Versi server: 10.4.28-MariaDB
--- Versi PHP: 8.2.4
+-- Waktu pembuatan: 25 Okt 2023 pada 04.59
+-- Versi server: 10.4.25-MariaDB
+-- Versi PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,7 +32,7 @@ CREATE TABLE `barang` (
   `kategori` varchar(50) NOT NULL,
   `deskripsi` varchar(45) NOT NULL,
   `kisaran_harga` varchar(45) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data untuk tabel `barang`
@@ -55,16 +55,16 @@ CREATE TABLE `detail_penerimaan` (
   `pengiriman_id` int(11) NOT NULL,
   `nama_penerima` varchar(45) NOT NULL,
   `waktu_penerima` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data untuk tabel `detail_penerimaan`
 --
 
 INSERT INTO `detail_penerimaan` (`id`, `kode`, `pengiriman_id`, `nama_penerima`, `waktu_penerima`) VALUES
-(1, 'JNE1', 1, 'Ibu Tuti', '2023-10-09 15:53:36'),
-(2, 'JNE2', 2, 'Bapak Santo', '2023-10-09 15:53:36'),
-(3, 'JNE3', 3, 'Pak Haikal', '2023-10-11 15:55:56');
+(1, 'JNE1', 1, 'Michail', '2023-10-09 15:53:36'),
+(2, 'JNE2', 2, 'Huda', '2023-10-09 15:53:36'),
+(3, 'JNE3', 3, 'Depia', '2023-10-11 15:55:56');
 
 -- --------------------------------------------------------
 
@@ -77,7 +77,7 @@ CREATE TABLE `kurir` (
   `nama` varchar(45) NOT NULL,
   `nomor_telepon` varchar(45) NOT NULL,
   `jadwal` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data untuk tabel `kurir`
@@ -85,31 +85,8 @@ CREATE TABLE `kurir` (
 
 INSERT INTO `kurir` (`id`, `nama`, `nomor_telepon`, `jadwal`) VALUES
 (1, 'Achbar', '085620622988', 'Pagi'),
-(2, 'Wahyu', '081630642958', 'Sore'),
+(2, 'wahyu', '081630642958', 'Sore'),
 (3, 'Yudhi', '082640642959', 'Malam');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `member`
---
-
-CREATE TABLE `member` (
-  `id` int(11) NOT NULL,
-  `username` varchar(45) NOT NULL,
-  `pass` varchar(225) NOT NULL,
-  `full_nama` varchar(50) NOT NULL,
-  `alamat` varchar(50) NOT NULL,
-  `no_telp` varchar(14) NOT NULL,
-  `level` enum('admin','operator') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data untuk tabel `member`
---
-
-INSERT INTO `member` (`id`, `username`, `pass`, `full_nama`, `alamat`, `no_telp`, `level`) VALUES
-(1, 'admin', 'admin123', 'Budi Santoso', 'Jl. Setia Budi 5, Malang', '08551881259', 'admin');
 
 -- --------------------------------------------------------
 
@@ -122,7 +99,7 @@ CREATE TABLE `pembayaran` (
   `metode` varchar(45) NOT NULL,
   `total_harga` double NOT NULL,
   `pengiriman_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data untuk tabel `pembayaran`
@@ -150,16 +127,16 @@ CREATE TABLE `pengiriman` (
   `status_pengiriman` varchar(45) NOT NULL,
   `nomor_telp_penerima` varchar(45) NOT NULL,
   `kurir_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data untuk tabel `pengiriman`
 --
 
 INSERT INTO `pengiriman` (`id`, `kode`, `id_user`, `kode_barang`, `tanggal`, `nama_penerima`, `lokasi_tujuan`, `status_pengiriman`, `nomor_telp_penerima`, `kurir_id`) VALUES
-(1, '3829182727', 1, 'L001', '2023-10-09', 'Ichisai', 'Jakarta', 'Proses', '083601755967', 1),
-(2, '3829387272', 2, 'M001', '2023-10-09', 'Achbar', 'Solo', 'Perjalanan', '081630642958', 2),
-(3, '3829132282', 3, 'T001', '2023-10-11', 'Angelina', 'Semarang', 'Proses', '085640642767', 3);
+(1, 'JNE1', 1, 'L001', '2023-10-09', 'Michail', 'Jakarta', 'Proses', '083601755967', 1),
+(2, 'JNE2', 2, 'M001', '2023-10-09', 'Huda', 'Solo', 'Perjalanan', '081630642958', 2),
+(3, 'JNE3', 3, 'T001', '2023-10-11', 'depia', 'Semarang', 'Proses', '085640642767', 3);
 
 -- --------------------------------------------------------
 
@@ -174,7 +151,7 @@ CREATE TABLE `user` (
   `password` varchar(225) NOT NULL,
   `nomor_telepon` varchar(16) NOT NULL,
   `alamat` varchar(45) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data untuk tabel `user`
@@ -183,7 +160,7 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `nama`, `username`, `password`, `nomor_telepon`, `alamat`) VALUES
 (1, 'Michail', 'mic123', 'michail12', '085620633922', 'Jakarta'),
 (2, 'Huda', 'Huda123', 'Huda12', '081630642958', 'Solo'),
-(3, 'Depia', 'depia12', 'depia123', '085640642767', 'Semarang');
+(3, 'depia', 'depia12', 'depia123', '085640642767', 'Semarang');
 
 --
 -- Indexes for dumped tables
@@ -210,13 +187,6 @@ ALTER TABLE `kurir`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `member`
---
-ALTER TABLE `member`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `username` (`username`);
-
---
 -- Indeks untuk tabel `pembayaran`
 --
 ALTER TABLE `pembayaran`
@@ -228,7 +198,6 @@ ALTER TABLE `pembayaran`
 --
 ALTER TABLE `pengiriman`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `kode` (`kode`),
   ADD KEY `fk_pengiriman_user_idx` (`id_user`),
   ADD KEY `fk_pengiriman_barang1_idx` (`kode_barang`),
   ADD KEY `fk_pengiriman_kurir1_idx` (`kurir_id`);
@@ -255,12 +224,6 @@ ALTER TABLE `detail_penerimaan`
 --
 ALTER TABLE `kurir`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT untuk tabel `member`
---
-ALTER TABLE `member`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `pembayaran`

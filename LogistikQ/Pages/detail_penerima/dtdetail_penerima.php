@@ -14,7 +14,7 @@ $data_detail_penerimaan = $model->datadetail_penerimaan();
     </ol>
     <div class="row g-4">
         <div class="col-12">
-            <div class="bg-light rounded h-100 p-4">
+            <div class="bg-secondary rounded h-100 p-4">
                 <h6 class="mb-4">Table Detail Penerima</h6>
                 <a href="index.php?url=Pages/detail_penerima/detail_penerima_form">
                     <button class="btn btn-sm btn-primary mb-3">Tambah</button></a>
@@ -22,12 +22,12 @@ $data_detail_penerimaan = $model->datadetail_penerimaan();
                     <table id="datapegawai" class="table">
                         <thead>
                             <tr>
-                                <th class="text-bold" scope="col">No</th>
-                                <th class="text-bold" scope="col">kode</th>
-                                <th class="text-bold" scope="col">pengiriman_id</th>
-                                <th class="text-bold" scope="col">nama_penerima</th>
-                                <th class="text-bold" scope="col">waktu_penerima</th>
-                                <th class="text-bold" scope="col">aksi</th>
+                                <th class="text-info" scope="col">No</th>
+                                <th class="text-info" scope="col">kode</th>
+                                <th class="text-info" scope="col">pengiriman_id</th>
+                                <th class="text-info" scope="col">nama_penerima</th>
+                                <th class="text-info" scope="col">waktu_penerima</th>
+                                <th class="text-info" scope="col">aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -52,12 +52,12 @@ $data_detail_penerimaan = $model->datadetail_penerimaan();
                                     <td>
                                         <form action="Pages/detail_penerima/detail_penerimacontroller.php" method="POST">
                                             <a href="index.php?url=Pages/detail_penerima/detail_penerima_form&idedit=<?= $row['id'] ?>">
-                                                <button type="button" class="btn btn-warning btn-sm">Update</button>
+                                                <button type="button" class="btn btn-success btn-sm">Update</button>
                                             </a>
                                             <button type="submit" class="btn btn-danger btn-sm" name="proses" value="hapus"
                                             onclick="return confirm('Apakah anda yakin ingin menghapusnya?')">Delete</button>
                                             <a href="index.php?url=Pages/detail_penerima/penerimaan&id=<?= $row['id'] ?>">
-                                                <button type="button" class="btn btn-info btn-sm">Details</button>
+                                                <button type="button" class="btn btn-warning btn-sm">Details</button>
                                             </a>
                                             <input type="hidden" name="idx" value="<?= $row['id'] ?>">
                                         </form>

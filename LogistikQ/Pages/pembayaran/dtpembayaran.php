@@ -14,7 +14,7 @@ $data_pembayaran = $model->dataPembayaran();
     </ol>
     <div class="row g-4">
         <div class="col-12">
-            <div class="bg-light rounded overflow-hidden h-100 p-4">
+            <div class="bg-secondary rounded overflow-hidden h-100 p-4">
                 <h6 class="mb-4">Table Pembayaran</h6>
                 <a href="index.php?url=Pages/pembayaran/pembayaran_form">
                     <button type="button" class="btn btn-primary btn-sm mb-3">Tambah</button>
@@ -24,11 +24,11 @@ $data_pembayaran = $model->dataPembayaran();
                     <table id="datapegawai" class="table">
                         <thead>
                             <tr>
-                                <th class="text-bold" scope="col">No</th>
-                                <th class="text-bold" scope="col">Metode Pembayaran</th>
-                                <th class="text-bold" scope="col">ToTal_Harga</th>
-                                <th class="text-bold" scope="col">id pengiriman</th>
-                                <th class="text-bold" scope='col'>Aksi</th>
+                                <th class="text-info" scope="col">No</th>
+                                <th class="text-info" scope="col">Metode Pembayaran</th>
+                                <th class="text-info" scope="col">ToTal_Harga</th>
+                                <th class="text-info" scope="col">id pengiriman</th>
+                                <th class="text-info" scope='col'>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -42,12 +42,12 @@ $data_pembayaran = $model->dataPembayaran();
                                     <td>
                                         <form action="Pages/pembayaran/pembayaran_controler.php" method="POST">
                                             <a href="index.php?url=Pages/pembayaran/pembayaran_form&idedit=<?= $row['id'] ?>">
-                                                <button type="button"  class="btn btn-warning btn-sm">Update</button>
+                                                <button type="button"  class="btn btn-success btn-sm">Update</button>
                                             </a>
-                                            <input type="submit" name="submit" class="btn btn-danger btn-sm" 
+                                            <input type="submit" name="submit" class="btn btn-warning btn-sm" 
                                             value="hapus" onclick="return confirm('Anda yakin ingin menghapus data ini ?')">
                                             <a href="index.php?url=Pages/pembayaran/pembayaran_detail&id=<?= $row['id'] ?>">
-                                                <button type="button" class="btn btn-info btn-sm">Details</button>
+                                                <button type="button" class="btn btn-primary btn-sm">Details</button>
                                             </a>
                                             <input type="hidden" name="idx" value="<?=$row['id']; ?>">
                                         </form>
