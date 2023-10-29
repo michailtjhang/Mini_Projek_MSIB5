@@ -20,7 +20,7 @@ $data_barang = $model->dataBarang();
                     <button type="button" class="btn btn-primary btn-sm mb-3">Tambah</button>
                 </a>
                 <div class="table-responsive">
-                    <table class="table">
+                    <table id="datapegawai" class="table">
                         <thead>
                             <tr>
                                 <th class="text-bold" scope="col">No</th>

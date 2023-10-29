@@ -19,7 +19,7 @@ $data_kurir = $model->dataKurir();
                     <button class="btn btn-sm btn-primary mb-3">Tambah</button>
                 </a>
                 <div class="table-responsive">
-                    <table class="table">
+                    <table id="datapegawai" class="table">
                         <thead>
                             <tr>
                                 <th class="text-bold" scope="col">No</th>
