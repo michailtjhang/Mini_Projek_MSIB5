@@ -14,21 +14,21 @@ $data_barang = $model->dataBarang();
     </ol>
     <div class="row g-4">
         <div class="col-12">
-            <div class="bg-secondary rounded overflow-hidden    h-100 p-4">
+            <div class="bg-light rounded h-100 p-4">
                 <h6 class="mb-4">Table Barang</h6>
                 <a href="index.php?url=Pages/barang/form_barang">
                     <button type="button" class="btn btn-primary btn-sm mb-3">Tambah</button>
                 </a>
                 <div class="table-responsive">
-                    <table id="datapegawai" class="table">
+                    <table class="table">
                         <thead>
                             <tr>
-                                <th class="text-info" scope="col">No</th>
-                                <th class="text-info" scope="col">Kode</th>
-                                <th class="text-info" scope="col">Kategori</th>
-                                <th class="text-info" scope="col">Deskripsi</th>
-                                <th class="text-info" scope="col">Kisaran Harga</th>
-                                <th class="text-info text-center" scope="col">Aksi</th>
+                                <th class="text-bold" scope="col">No</th>
+                                <th class="text-bold" scope="col">Kode</th>
+                                <th class="text-bold" scope="col">Kategori</th>
+                                <th class="text-bold" scope="col">Deskripsi</th>
+                                <th class="text-bold" scope="col">Kisaran Harga</th>
+                                <th class="text-bold" scope="col">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -43,11 +43,11 @@ $data_barang = $model->dataBarang();
                                     <td>
                                         <form action="Pages/barang/Control_barang.php" method="post">
                                             <a href="index.php?url=Pages/barang/form_barang&idedit=<?= $row['kode'] ?>">
-                                                <button type="button" class="btn btn-success btn-sm">Ubah</button>
+                                                <button type="button" class="btn btn-warning btn-sm">Ubah</button>
                                             </a>
-                                            <button type="submit" class="btn btn-warning btn-sm" name="proses" value="hapus" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus?')">Hapus</button>
+                                            <button type="submit" class="btn btn-danger btn-sm" name="proses" value="hapus" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus?')">Hapus</button>
                                             <a href="index.php?url=Pages/barang/barang_detail&id=<?= $row['kode'] ?>">
-                                                <button type="button" class="btn btn-primary btn-sm">Details</button>
+                                                <button type="button" class="btn btn-info btn-sm">Details</button>
                                             </a>
                                             <input type="hidden" name="idx" value="<?= $row['kode'] ?>">
                                         </form>

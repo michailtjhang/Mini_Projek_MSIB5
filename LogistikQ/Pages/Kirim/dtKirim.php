@@ -14,7 +14,7 @@ $data_kirim = $model->dataKirim();
     </ol>
     <div class="row g-4">
         <div class="col-12">
-            <div class="bg-secondary rounded overflow-hidden h-100 p-4">
+            <div class="bg-light rounded overflow-hidden h-100 p-4">
                 <h6 class="mb-4">Table Pengiriman</h6>
                 <a href="index.php?url=Pages/Kirim/form_kirim">
                     <button type="button" class="btn btn-primary btn-sm mb-3">Tambah</button>
@@ -23,17 +23,17 @@ $data_kirim = $model->dataKirim();
                     <table id="datapegawai" class="table">
                         <thead>
                             <tr>
-                                <th class="text-info" scope="col">NO</th>
-                                <th class="text-info" scope="col">Kode</th>
-                                <th class="text-info" scope="col">Nama User</th>
-                                <th class="text-info" scope="col">Kode Barang</th>
-                                <th class="text-info" scope="col">Tanggal</th>
-                                <th class="text-info" scope="col">Nama Penerima</th>
-                                <th class="text-info" scope="col">Lokasi Tujuan</th>
-                                <th class="text-info" scope="col">Status Pengiriman</th>
-                                <th class="text-info" scope="col">No Telp Penerima</th>
-                                <th class="text-info" scope="col">Nama Kurir</th>
-                                <th class="text-info" scope="col">Aksi</th>
+                                <th class="text-bold" scope="col">NO</th>
+                                <th class="text-bold" scope="col">Kode</th>
+                                <th class="text-bold" scope="col">Nama User</th>
+                                <th class="text-bold" scope="col">Kode Barang</th>
+                                <th class="text-bold" scope="col">Tanggal</th>
+                                <th class="text-bold" scope="col">Nama Penerima</th>
+                                <th class="text-bold" scope="col">Lokasi Tujuan</th>
+                                <th class="text-bold" scope="col">Status Pengiriman</th>
+                                <th class="text-bold" scope="col">No Telp Penerima</th>
+                                <th class="text-bold" scope="col">Nama Kurir</th>
+                                <th class="text-bold" scope="col">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -53,11 +53,11 @@ $data_kirim = $model->dataKirim();
                                     <td>
                                         <form action="Pages/Kirim/control_kirim.php" method="post">
                                             <a href="index.php?url=Pages/Kirim/form_kirim&idedit=<?= $row['id'] ?>">
-                                                <button type="button" class="btn btn-success btn-sm">Ubah</button>
+                                                <button type="button" class="btn btn-warning btn-sm">Ubah</button>
                                             </a>
-                                            <button type="submit" class="btn btn-warning btn-sm" name="proses" value="hapus" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus?')">Hapus</button>
+                                            <button type="submit" class="btn btn-danger btn-sm" name="proses" value="hapus" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus?')">Hapus</button>
                                             <a href="index.php?url=Pages/Kirim/kirim_detail&id=<?= $row['id'] ?>">
-                                                <button type="button" class="btn btn-primary btn-sm">Details</button>
+                                                <button type="button" class="btn btn-info btn-sm">Details</button>
                                             </a>
                                             <input type="hidden" name="idx" value="<?= $row['id'] ?>">
                                         </form>
