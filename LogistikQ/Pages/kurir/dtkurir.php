@@ -26,7 +26,9 @@ $data_kurir = $model->dataKurir();
                                 <th class="text-bold" scope="col">Nama</th>
                                 <th class="text-bold" scope="col">Nomor Telepon</th>
                                 <th class="text-bold" scope="col">Jadwal</th>
-                                <th class="text-bold" scope="col">Aksi</th>
+
+                                <th class="text-bold text-center" scope="col">Aksi</th>
+
                                 </th>
                             </tr>
                         </thead>

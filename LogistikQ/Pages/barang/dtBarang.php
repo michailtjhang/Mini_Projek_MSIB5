@@ -28,7 +28,9 @@ $data_barang = $model->dataBarang();
                                 <th class="text-bold" scope="col">Kategori</th>
                                 <th class="text-bold" scope="col">Deskripsi</th>
                                 <th class="text-bold" scope="col">Kisaran Harga</th>
-                                <th class="text-bold" scope="col">Aksi</th>
+
+                                <th class="text-bold text-center" scope="col">Aksi</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -40,7 +42,7 @@ $data_barang = $model->dataBarang();
                                     <td><?= $row['kategori']; ?></td>
                                     <td><?= $row['deskripsi']; ?></td>
                                     <td><?= $row['kisaran_harga']; ?></td>
-                                    <td>
+                                    <td class="text-center"> 
                                         <form action="Pages/barang/Control_barang.php" method="post">
                                             <a href="index.php?url=Pages/barang/form_barang&idedit=<?= $row['kode'] ?>">
                                                 <button type="button" class="btn btn-warning btn-sm">Ubah</button>
