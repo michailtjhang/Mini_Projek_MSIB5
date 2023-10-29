@@ -28,7 +28,7 @@
                         </div>
                     </div>
                     <a href="index.php?url=Pages/Kirim/dtKirim" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Pengiriman</a>
-                    <a href="index.php?url=#" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Laporan</a>
+                    <a href="index.php?url=Pages/laporan/laporan" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Laporan</a>
                 </div>
             </nav>
         </div>
