@@ -14,6 +14,7 @@ if (!empty($idedit)) {
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <h2 align="center" class="mt-4">Form Kurir</h2>
+
 <div class="container-fluid" style="margin: 0 0 0 15px;">
     <div class="form-kurir bg-light p-3 m-4 rounded-3">
         <form action="kurir_controller.php" method="POST">
@@ -52,5 +53,25 @@ if (!empty($idedit)) {
                 </div>
             </div>
         </form>
+
     </div>
-</div>
+    <div class="form-group row">
+        <label for="text5" class="col-4 col-form-label">Jadwal</label>
+        <div class="col-8">
+            <input id="text5" name="jadwal" type="text" class="form-control" value="<?= $row['jadwal'] ?>" placeholder="Masukan Jadwal">
+        </div>
+    </div>
+    <br>
+    <div class="form-group row">
+        <div class="offset-4 col-8">
+            <?php
+            if (empty($idedit)) { ?>
+                <button name="proses" value="simpan" type="submit" class="btn btn-primary">Submit</button>
+            <?php } else {
+            ?>
+                <button type="submit" name="proses" value="ubah" class="btn btn-warning">Ubah</button>
+            <?php } ?>
+            <input type="hidden" name="idx" value="<?= $idedit; ?>">
+        </div>
+    </div>
+</form>

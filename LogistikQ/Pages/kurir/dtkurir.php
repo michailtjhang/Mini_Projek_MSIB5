@@ -26,7 +26,9 @@ $data_kurir = $model->dataKurir();
                                 <th class="text-bold" scope="col">Nama</th>
                                 <th class="text-bold" scope="col">Nomor Telepon</th>
                                 <th class="text-bold" scope="col">Jadwal</th>
+
                                 <th class="text-bold text-center" scope="col">Aksi</th>
+
                                 </th>
                             </tr>
                         </thead>
@@ -38,7 +40,7 @@ $data_kurir = $model->dataKurir();
                                     <td><?= $row['nama']; ?></td>
                                     <td><?= $row['nomor_telepon']; ?></td>
                                     <td><?= $row['jadwal']; ?></td>
-                                    <td class="text-center">
+                                    <td>
                                         <form action="Pages/kurir/kurir_controller.php" method="POST">
                                             <a href="index.php?url=Pages/kurir/kurir_form&idedit=<?= $row['id'] ?>">
                                                 <button type="button" class="btn btn-warning btn-sm">Ubah</button>

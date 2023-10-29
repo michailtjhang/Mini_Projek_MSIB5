@@ -28,7 +28,9 @@ $data_barang = $model->dataBarang();
                                 <th class="text-bold" scope="col">Kategori</th>
                                 <th class="text-bold" scope="col">Deskripsi</th>
                                 <th class="text-bold" scope="col">Kisaran Harga</th>
+
                                 <th class="text-bold text-center" scope="col">Aksi</th>
+
                             </tr>
                         </thead>
                         <tbody>
