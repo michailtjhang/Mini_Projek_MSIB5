@@ -41,7 +41,7 @@ if (!empty($idedit)) {
             $sel = ($pengirim['id'] == $row['pengiriman_id']) ? 'selected ' : '';
             ?>
             <option value="<?= $pengirim['id']; ?>" <?= $sel; ?>>
-              
+              <?= $pengirim['kode']; ?>
             </option>
 
             <?php } ?>
