@@ -56,7 +56,7 @@ if(!empty($idedit)){
       <button name="submit" type="submit" value='simpan' class="btn btn-primary">Submit</button>
       <?php
       }else {?>
-      <button name="submit" type="submit" value='ubah' class="btn btn-success">Update</button>
+      <button name="submit" type="submit" value='ubah' class="btn btn-warning">Update</button>
       <?php } ?>
       <input type="hidden" name="idx" value="<?= $idedit; ?>">
     </div>

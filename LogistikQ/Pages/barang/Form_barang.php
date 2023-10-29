@@ -20,7 +20,7 @@ if( !empty($idedit) ) {
   <!-- form start -->
   <form action="Pages/barang/Control_barang.php" method="POST">
     <div class="col-sm-12 col-xl-9">
-      <div class="bg-secondary rounded h-100 p-4">
+      <div class="bg-light rounded h-100 p-4">
         <!-- input pertama -->
         <h6 class="mb-4">Tambah Data Barang</h6>
         <div class="form-floating mb-3">
@@ -48,7 +48,7 @@ if( !empty($idedit) ) {
         <?php if (empty($idedit)) { ?>
           <button name="proses" value="save" type="submit" class="btn btn-primary">Submit</button>
         <?php } else { ?>
-          <button type="submit" name="proses" value="ubah" class="btn btn-success">Ubah</button>
+          <button type="submit" name="proses" value="ubah" class="btn btn-warning">Ubah</button>
         <?php } ?>
         <input type="hidden" name="idx" value="<?= $idedit ?>">
       </div>
