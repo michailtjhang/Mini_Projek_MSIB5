@@ -1,4 +1,7 @@
 <?php
+session_start();
+global $member;
+global $level;
 include_once 'models/koneksi.php';
 include_once 'models/lacak.php';
 include_once 'template/header.php';
