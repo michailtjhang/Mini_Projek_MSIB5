@@ -46,6 +46,10 @@
             // dom: 'Bfrtip',
             // buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
         });
+        new DataTable('#example', {
+            dom: 'Bfrtip',
+            buttons: ['', '', '', '',  { extend: 'print', className: 'btn btn-primary' }],
+        });
     </script>
 </body>
 
