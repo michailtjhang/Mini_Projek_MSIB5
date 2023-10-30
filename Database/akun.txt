@@ -1,0 +1,2 @@
+akun admin = username : admin, password : admin
+akun operator = username : operator,  password : operator

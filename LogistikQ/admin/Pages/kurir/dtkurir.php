@@ -41,18 +41,19 @@ $data_kurir = $model->dataKurir();
                                     <td><?= $row['nomor_telepon']; ?></td>
                                     <td><?= $row['jadwal']; ?></td>
                                     <td class="text-center">
-                                        <form action="Pages/kurir/kurir_controller.php" method="POST">
+                                    <form action="Pages/kurir/kurir_controller.php" method="POST">
+                                        <a href="index.php?url=Pages/kurir/detail_kurir&id=<?= $row['id'] ?>">
+                                                <button type="button" class="btn btn-info btn-sm">Details</button>
+                                            </a>
                                             <?php
-                                            if ($sesi['level'] != 'operator') :
-                                            ?>
-                                                <a href="index.php?url=Pages/kurir/kurir_form&idedit=<?= $row['id'] ?>">
-                                                    <button type="button" class="btn btn-warning btn-sm">Ubah</button>
-                                                </a>
-                                                <button type="submit" class="btn btn-danger btn-sm" name="proses" value="hapus" onclick="return confirm('Yakin ingin menghapus')">Hapus</button>
-                                                <input type="hidden" name="idx" value="<?= $row['id'] ?>">
-                                            <?php
-                                            endif;
-                                            ?>
+                                            if ($sesi['level'] != 'operator') {
+                                                    ?>
+                                            <a href="index.php?url=Pages/kurir/kurir_form&idedit=<?= $row['id'] ?>">
+                                                <button type="button" class="btn btn-warning btn-sm">Ubah</button>
+                                            </a>
+                                            <button type="submit" class="btn btn-danger btn-sm" name="proses" value="hapus" onclick="return confirm('Yakin ingin menghapus')">Hapus</button>
+                                            <input type="hidden" name="idx" value="<?= $row['id'] ?>">
+                                            <?php }?>
                                         </form>
                                     </td>
                                 </tr>

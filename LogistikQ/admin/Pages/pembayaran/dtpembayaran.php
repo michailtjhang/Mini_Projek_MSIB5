@@ -41,15 +41,23 @@ $data_pembayaran = $model->dataPembayaran();
                                     <td><?= $row['pengiriman_id']; ?></td>
                                     <td>
                                         <form action="Pages/pembayaran/pembayaran_controler.php" method="POST">
-                                            <a href="index.php?url=Pages/pembayaran/pembayaran_form&idedit=<?= $row['id'] ?>">
+                                        <a href="index.php?url=Pages/pembayaran/pembayaran_detail&id=<?= $row['id'] ?>">
+                                                <button type="button" class="btn btn-info btn-sm">Details</button>
+                                            </a>
+                                            <?php 
+                                                if ($sesi['level'] != 'operator') {
+                                                    ?>
+                                                     <a href="index.php?url=Pages/pembayaran/pembayaran_form&idedit=<?= $row['id'] ?>">
                                                 <button type="button"  class="btn btn-warning btn-sm">Update</button>
                                             </a>
                                             <input type="submit" name="submit" class="btn btn-danger btn-sm" 
                                             value="hapus" onclick="return confirm('Anda yakin ingin menghapus data ini ?')">
-                                            <a href="index.php?url=Pages/pembayaran/pembayaran_detail&id=<?= $row['id'] ?>">
-                                                <button type="button" class="btn btn-info btn-sm">Details</button>
-                                            </a>
+                                           
                                             <input type="hidden" name="idx" value="<?=$row['id']; ?>">
+                                            <?php
+                                                }
+                                            ?>
+                                            
                                         </form>
                                     </td>
                                 </tr>

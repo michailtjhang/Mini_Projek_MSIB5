@@ -15,7 +15,6 @@ $data_user = $model->dataUser();
         <div class="col-12">
             <div class="bg-light rounded h-100 p-4">
                 <h6 class="mb-4">Table User</h6>
-                <a href="index.php?url=Pages/user/user_form">
                     <div class="table-responsive">
                         <table id="datapegawai" class="table">
                             <thead>
