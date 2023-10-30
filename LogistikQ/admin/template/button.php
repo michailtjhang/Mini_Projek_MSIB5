@@ -45,6 +45,12 @@
         new DataTable('#datapegawai', {
             // dom: 'Bfrtip',
             // buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
+            
+        });
+            new DataTable('#example', {
+            dom: 'Bfrtip',
+            buttons: ['', '', '', '', { extend:'print', className: 'btn btn-primary'}],
+            
         });
         new DataTable('#example', {
             dom: 'Bfrtip',
