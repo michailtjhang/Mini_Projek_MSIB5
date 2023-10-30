@@ -42,6 +42,9 @@ $data_kurir = $model->dataKurir();
                                     <td><?= $row['jadwal']; ?></td>
                                     <td class="text-center">
                                         <form action="Pages/kurir/kurir_controller.php" method="POST">
+                                        <a href="index.php?url=Pages/kurir/detail_kurir&id=<?= $row['id'] ?>">
+                                                <button type="button" class="btn btn-info btn-sm">Details</button>
+                                            </a>
                                             <a href="index.php?url=Pages/kurir/kurir_form&idedit=<?= $row['id'] ?>">
                                                 <button type="button" class="btn btn-warning btn-sm">Ubah</button>
                                             </a>

@@ -17,48 +17,38 @@ if(!empty($idedit)){
 
 
 <form action="Pages/pembayaran/pembayaran_controler.php" method="POST">
-    <h2 class="text-center mb-5 text-info">Tambah data Pembayaran</h2>
-  <div class="form-group row">
-   
-  </div>
-  <div class="form-group row">
-    <label for="text1" class="col-4 col-form-label text-danger">metode</label> 
-    <div class="col-8">
-      <input  id="text1" name="text1" value="<?= $row['metode']; ?>" placeholder="masukkan metode pembayaran" type="text" class="form-control" required="required">
+<div class="col-sm-12 col-xl-9">
+      <div class="bg-light rounded h-100 p-4">
+        <!-- input pertama -->
+        <h6 class="mb-4">Data Pembayaran</h6>
+        <div class="form-floating mb-3">
+          <input type="text" name="text1" class="form-control" id="floatingKode" placeholder="Masukkan metode" value="<?= $row['metode'] ?>">
+          <label for="floatingKode">metode</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" name="text2" class="form-control" id="floatingKode" placeholder="Masukkan total bayar" value="<?= $row['total_harga'] ?>">
+          <label for="floatingKode">Total Harga</label>
+        </div>
+        <!-- input kedua -->
+        <div class="form-floating mb-3">
+                    <select class="form-select" name="select" id="nama_user" aria-label="Floating label select example">
+                        <option selected>--- Nama User ---</option>
+                        <?php foreach( $sr_pengiriman as $pengirim ) : 
+                            $sel = ($pengirim['id'] == $row['pengiriman_id']) ? 'selected' : '';?>
+                            <option value="<?= $pengirim['id'] ?>" <?= $sel; ?>><?= $pengirim['kode'] ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <label for="nama_user">id Pengiriman</label>
+                </div> 
+               
+        <!-- input ke tiga -->
+         <br>
+        <?php if (empty($idedit)) { ?>
+          <button name="submit" value="simpan" type="submit" class="btn btn-primary">Submit</button>
+        <?php } else { ?>
+          <button type="submit" name="submit" value="ubah" class="btn btn-warning">Ubah</button>
+        <?php } ?>
+        <input type="hidden" name="idx" value="<?= $idedit; ?>">
+      </div>
     </div>
-  </div>
-  <div class="form-group row">
-    <label for="text2" class="col-4 col-form-label text-danger font">total harga</label> 
-    <div class="col-8">
-      <input id="text2" name="text2" value="<?= $row['total_harga']; ?>" placeholder="masukkan total harga" type="text" class="form-control" required="required">
-    </div>
-  </div> 
-  <div class="form-group row">
-    <label for="select" class="col-4 col-form-label text-danger">id pengiriman</label> 
-    <div class="col-8">
-      <select id="select" name="select" class="custom-select">
-      <?php foreach($sr_pengiriman as $pengirim){
-        $sel = ($pengirim['id']== $row['pengiriman_id']) ? 'selected ' : '';
-        ?>
-        <option value="<?= $pengirim['id'];?>"  <?= $sel;?>><?= $pengirim['kode'];?></option>
-
-        <?php
-    }?>
-      </select>
-   
-    </div>
-  </div> 
-
-  <div class="form-group row">
-    <div class="offset-4 col-8">
-      <?php
-      if(empty($idedit)){?>
-      <button name="submit" type="submit" value='simpan' class="btn btn-primary">Submit</button>
-      <?php
-      }else {?>
-      <button name="submit" type="submit" value='ubah' class="btn btn-warning">Update</button>
-      <?php } ?>
-      <input type="hidden" name="idx" value="<?= $idedit; ?>">
-    </div>
-  </div>
 </form>

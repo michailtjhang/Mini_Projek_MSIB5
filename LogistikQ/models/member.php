@@ -8,7 +8,7 @@ class member {
     }
 
     public function cekLogin($data) {
-        $sql = "SELECT * FROM member WHERE username = ? AND pass = ?";
+        $sql = "SELECT * FROM member WHERE username = ? AND pass = SHA1(MD5(SHA1(?))) ";
 
         $ps = $this->koneksi->prepare($sql);
         $ps->execute($data);
