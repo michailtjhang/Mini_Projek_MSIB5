@@ -42,11 +42,17 @@ $data_kurir = $model->dataKurir();
                                     <td><?= $row['jadwal']; ?></td>
                                     <td class="text-center">
                                         <form action="Pages/kurir/kurir_controller.php" method="POST">
-                                            <a href="index.php?url=Pages/kurir/kurir_form&idedit=<?= $row['id'] ?>">
-                                                <button type="button" class="btn btn-warning btn-sm">Ubah</button>
-                                            </a>
-                                            <button type="submit" class="btn btn-danger btn-sm" name="proses" value="hapus" onclick="return confirm('Yakin ingin menghapus')">Hapus</button>
-                                            <input type="hidden" name="idx" value="<?= $row['id'] ?>">
+                                            <?php
+                                            if ($sesi['level'] != 'operator') :
+                                            ?>
+                                                <a href="index.php?url=Pages/kurir/kurir_form&idedit=<?= $row['id'] ?>">
+                                                    <button type="button" class="btn btn-warning btn-sm">Ubah</button>
+                                                </a>
+                                                <button type="submit" class="btn btn-danger btn-sm" name="proses" value="hapus" onclick="return confirm('Yakin ingin menghapus')">Hapus</button>
+                                                <input type="hidden" name="idx" value="<?= $row['id'] ?>">
+                                            <?php
+                                            endif;
+                                            ?>
                                         </form>
                                     </td>
                                 </tr>
