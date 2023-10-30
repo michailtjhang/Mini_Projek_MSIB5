@@ -44,11 +44,17 @@ $data_user = $model->dataUser();
                                                 <a href="index.php?url=Pages/user/detail_user&id=<?= $row['id'] ?>">
                                                     <button type="button" class="btn btn-info btn-sm">Details</button>
                                                 </a>
+                                                <?php 
+                                                if ($sesi['level'] != 'operator') :
+                                                ?>
                                                 <a href="index.php?url=Pages/user/user_form&idedit=<?= $row['id'] ?>">
                                                     <button type="button" class="btn btn-warning btn-sm">Update</button>
                                                 </a>
                                                 <button type="submit" class="btn btn-danger btn-sm" name="proses" value="hapus" onclick="return confirm('Apakah anda yakin ingin menghapusnya?')">Delete</button>
                                                 <input type="hidden" name="idx" value="<?= $row['id'] ?>">
+                                                <?php 
+                                                    endif;
+                                                ?>
                                             </form>
                                         </td>
                                     </tr>
