@@ -58,6 +58,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a  href="index.php?hal=home">Home</a></li>
+          <li><a href="index.php?hal=login">Login</a></li>
           <li><a href="index.php?hal=layanan">Layanan</a></li>
           <li><a href="index.php?hal=contact">Contact Us</a></li>
         </ul>
