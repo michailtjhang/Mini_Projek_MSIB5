@@ -21,22 +21,19 @@ if (!empty($idedit)) {
             <div class="form-group row mb-2">
                 <label for="text1" class="col-4 col-form-label">Nama</label>
                 <div class="col-8">
-                    <input id="text1" name="nama" type="text" class="form-control " value="<?= $row['nama'] ?>"
-                        placeholder="Masukan Nama">
+                    <input id="text1" name="nama" type="text" class="form-control " value="<?= $row['nama'] ?>" placeholder="Masukan Nama">
                 </div>
             </div>
             <div class="form-group row mb-2">
                 <label for="text4" class="col-4 col-form-label">Nomor Telepon</label>
                 <div class="col-8">
-                    <input id="text4" name="nomor_telepon" type="text" class="form-control"
-                        value="<?= $row['nomor_telepon'] ?>" placeholder="Masukan Nomor">
+                    <input id="text4" name="nomor_telepon" type="text" class="form-control" value="<?= $row['nomor_telepon'] ?>" placeholder="Masukan Nomor">
                 </div>
             </div>
             <div class="form-group row mb-2">
                 <label for="text5" class="col-4 col-form-label">Jadwal</label>
                 <div class="col-8">
-                    <input id="text5" name="jadwal" type="text" class="form-control" value="<?= $row['jadwal'] ?>"
-                        placeholder="Masukan Jadwal">
+                    <input id="text5" name="jadwal" type="text" class="form-control" value="<?= $row['jadwal'] ?>" placeholder="Masukan Jadwal">
                 </div>
             </div>
             <br>
@@ -44,34 +41,12 @@ if (!empty($idedit)) {
                 <div class="offset-5 col-4">
                     <?php
                     if (empty($idedit)) { ?>
-                        <button name="proses" value="simpan" type="submit" class="btn btn-danger">Submit</button>
+                        <button name="proses" value="simpan" type="submit" class="btn btn-primary">Submit</button>
                     <?php } else {
-                        ?>
+                    ?>
                         <button type="submit" name="proses" value="ubah" class="btn btn-warning">Ubah</button>
                     <?php } ?>
                     <input type="hidden" name="idx" value="<?= $idedit; ?>">
                 </div>
             </div>
         </form>
-
-    </div>
-    <div class="form-group row">
-        <label for="text5" class="col-4 col-form-label">Jadwal</label>
-        <div class="col-8">
-            <input id="text5" name="jadwal" type="text" class="form-control" value="<?= $row['jadwal'] ?>" placeholder="Masukan Jadwal">
-        </div>
-    </div>
-    <br>
-    <div class="form-group row">
-        <div class="offset-4 col-8">
-            <?php
-            if (empty($idedit)) { ?>
-                <button name="proses" value="simpan" type="submit" class="btn btn-primary">Submit</button>
-            <?php } else {
-            ?>
-                <button type="submit" name="proses" value="ubah" class="btn btn-warning">Ubah</button>
-            <?php } ?>
-            <input type="hidden" name="idx" value="<?= $idedit; ?>">
-        </div>
-    </div>
-</form>

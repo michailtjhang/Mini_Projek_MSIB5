@@ -40,7 +40,7 @@ $data_kurir = $model->dataKurir();
                                     <td><?= $row['nama']; ?></td>
                                     <td><?= $row['nomor_telepon']; ?></td>
                                     <td><?= $row['jadwal']; ?></td>
-                                    <td>
+                                    <td class="text-center">
                                         <form action="Pages/kurir/kurir_controller.php" method="POST">
                                             <a href="index.php?url=Pages/kurir/kurir_form&idedit=<?= $row['id'] ?>">
                                                 <button type="button" class="btn btn-warning btn-sm">Ubah</button>
