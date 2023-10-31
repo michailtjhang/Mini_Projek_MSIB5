@@ -45,13 +45,15 @@ if (!empty($idedit)) {
                     <label for="nama_user">id Pengiriman</label>
                 </div> 
                 <div class="form-floating mb-3">
-          <input type="text" name="nama_penerima" class="form-control" id="floatingKode" placeholder="Masukkan kode barang" value="<?= $row['kode'] ?>">
+          <input type="text" name="nama_penerima" class="form-control" id="floatingKode" placeholder="Masukkan Nama penerima" value="<?= $row['kode'] ?>">
           <label for="floatingKode">Nama penerima</label>
         </div>
         <!-- input ke tiga -->
+       
         <div class="form-floating mb-3">
-          <input type="datetime-local" name="waktu_penerima" class="form-control" id="floatingDeskripsi" placeholder="Masukkan deskripsi Barang" value="<?= $row['waktu_penerima'] ?>">
-          <label for="floatingDeskripsi">Waktu Penerimaan</label>
+          
+            <input type="datetime-local" name="waktu_penerima" class="form-control" id="floatingDeskripsi" placeholder="" value="<?= $row['waktu_penerima'] ?>">
+            <label for="floatingDeskripsi">Waktu Penerimaan</label>
         </div>
          <br>
         <?php if (empty($idedit)) { ?>

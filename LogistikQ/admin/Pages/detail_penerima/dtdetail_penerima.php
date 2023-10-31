@@ -47,7 +47,7 @@ $data_detail_penerimaan = $model->datadetail_penerimaan();
                                         <?= $row['nama_penerima']; ?>
                                     </td>
                                     <td>
-                                        <?= $row['waktu_penerima']; ?>
+                                    <?= $row['waktu_penerima']; ?>
                                     </td>
                                     <td>
                                         <form action="Pages/detail_penerima/detail_penerimacontroller.php" method="POST">
