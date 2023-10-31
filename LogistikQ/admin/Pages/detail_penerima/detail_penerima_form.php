@@ -49,9 +49,7 @@ if (!empty($idedit)) {
           <label for="floatingKode">Nama penerima</label>
         </div>
         <!-- input ke tiga -->
-       
         <div class="form-floating mb-3">
-          
             <input type="datetime-local" name="waktu_penerima" class="form-control" id="floatingDeskripsi" placeholder="" value="<?= $row['waktu_penerima'] ?>">
             <label for="floatingDeskripsi">Waktu Penerimaan</label>
         </div>
