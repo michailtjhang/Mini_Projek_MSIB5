@@ -5,9 +5,8 @@ include_once '../../models/detail_penerima.php';
 $kode = $_POST['kode'];
 $pengiriman_id = $_POST['pengiriman_id'];
 $nama_penerima = $_POST['nama_penerima'];
-$waktu_penerima = $_POST['waktu_penerima'];
 $data = [
-    $kode, $pengiriman_id, $nama_penerima, $waktu_penerima
+    $kode, $pengiriman_id, $nama_penerima
 ];
 $model = new detail_penerimaan();
 $tombol = $_REQUEST['proses'];

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Okt 2023 pada 19.59
--- Versi server: 10.4.25-MariaDB
--- Versi PHP: 8.1.10
+-- Waktu pembuatan: 31 Okt 2023 pada 04.30
+-- Versi server: 10.4.28-MariaDB
+-- Versi PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,7 +32,7 @@ CREATE TABLE `barang` (
   `kategori` varchar(50) NOT NULL,
   `deskripsi` varchar(45) NOT NULL,
   `kisaran_harga` varchar(45) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data untuk tabel `barang`
@@ -54,16 +54,16 @@ CREATE TABLE `detail_penerimaan` (
   `kode` varchar(45) NOT NULL,
   `pengiriman_id` int(11) NOT NULL,
   `nama_penerima` varchar(45) NOT NULL,
-  `waktu_penerima` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `waktu_penerima` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data untuk tabel `detail_penerimaan`
 --
 
 INSERT INTO `detail_penerimaan` (`id`, `kode`, `pengiriman_id`, `nama_penerima`, `waktu_penerima`) VALUES
-(1, 'JNE1', 1, 'Michail', '2023-10-09 15:53:36'),
-(3, 'JNE3', 3, 'Depia', '2023-10-11 15:55:56');
+(1, 'JNE1', 1, 'Michail', '2023-10-09 08:53:36'),
+(3, 'JNE3', 3, 'Depia', '2023-10-11 08:55:56');
 
 -- --------------------------------------------------------
 
@@ -76,7 +76,7 @@ CREATE TABLE `kurir` (
   `nama` varchar(45) NOT NULL,
   `nomor_telepon` varchar(45) NOT NULL,
   `jadwal` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data untuk tabel `kurir`
@@ -101,7 +101,7 @@ CREATE TABLE `member` (
   `alamat` varchar(50) DEFAULT NULL,
   `no_telp` varchar(14) DEFAULT NULL,
   `level` enum('admin','operator') DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data untuk tabel `member`
@@ -124,7 +124,7 @@ CREATE TABLE `pembayaran` (
   `metode` varchar(45) NOT NULL,
   `total_harga` double NOT NULL,
   `pengiriman_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data untuk tabel `pembayaran`
@@ -152,7 +152,7 @@ CREATE TABLE `pengiriman` (
   `status_pengiriman` varchar(45) NOT NULL,
   `nomor_telp_penerima` varchar(45) NOT NULL,
   `kurir_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data untuk tabel `pengiriman`
@@ -176,7 +176,7 @@ CREATE TABLE `user` (
   `password` varchar(225) NOT NULL,
   `nomor_telepon` varchar(16) NOT NULL,
   `alamat` varchar(45) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data untuk tabel `user`
