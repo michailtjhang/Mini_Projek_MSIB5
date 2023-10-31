@@ -3,8 +3,7 @@
       <div class="row">
         <div class="col-md-7 mb-4 mb-md-0">
           <h3>About LogistikQ</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius ea delectus pariatur, numquam aperiam
-            dolore nam optio dolorem facilis itaque voluptatum recusandae deleniti minus animi.</p>
+          <p>ini website pengirim barang</p>
           <p class="social">
             <a href="#"><span class="bi bi-twitter"></span></a>
             <a href="#"><span class="bi bi-facebook"></span></a>
