@@ -44,14 +44,21 @@ $data_barang = $model->dataBarang();
                                     <td><?= $row['kisaran_harga']; ?></td>
                                     <td class="text-center"> 
                                         <form action="Pages/barang/Control_barang.php" method="post">
+                                            <a href="index.php?url=Pages/barang/barang_detail&id=<?= $row['kode'] ?>">
+                                                <button type="button" class="btn btn-info btn-sm">Details</button>
+                                            </a>
+                                            <?php 
+                                                if ($sesi['level'] != 'operator') :
+                                            ?>
                                             <a href="index.php?url=Pages/barang/form_barang&idedit=<?= $row['kode'] ?>">
                                                 <button type="button" class="btn btn-warning btn-sm">Ubah</button>
                                             </a>
                                             <button type="submit" class="btn btn-danger btn-sm" name="proses" value="hapus" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus?')">Hapus</button>
-                                            <a href="index.php?url=Pages/barang/barang_detail&id=<?= $row['kode'] ?>">
-                                                <button type="button" class="btn btn-info btn-sm">Details</button>
-                                            </a>
+                                            
                                             <input type="hidden" name="idx" value="<?= $row['kode'] ?>">
+                                            <?php  
+                                             endif;
+                                            ?>
                                         </form>
                                     </td>
                                 </tr>

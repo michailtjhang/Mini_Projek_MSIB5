@@ -51,21 +51,20 @@ $data_detail_penerimaan = $model->datadetail_penerimaan();
                                     </td>
                                     <td>
                                         <form action="Pages/detail_penerima/detail_penerimacontroller.php" method="POST">
+                                        <a href="index.php?url=Pages/detail_penerima/penerimaan&id=<?= $row['id'] ?>">
+                                                <button type="button" class="btn btn-info btn-sm">Details</button>
+                                            </a>
+                                            <?php 
+                                                if ($sesi['level'] != 'operator') {
+                                            ?>
                                             <a href="index.php?url=Pages/detail_penerima/detail_penerima_form&idedit=<?= $row['id'] ?>">
                                                 <button type="button" class="btn btn-warning btn-sm">Update</button>
                                             </a>
-                                            <?php
-                                            if ($sesi['level'] !='operator') :
-                                                ?>
                                             <button type="submit" class="btn btn-danger btn-sm" name="proses" value="hapus"
                                             onclick="return confirm('Apakah anda yakin ingin menghapusnya?')">Delete</button>
-                                            <a href="index.php?url=Pages/detail_penerima/penerimaan&id=<?= $row['id'] ?>">
-                                                <button type="button" class="btn btn-info btn-sm">Details</button>
-                                            </a>
+                                            
                                             <input type="hidden" name="idx" value="<?= $row['id'] ?>">
-                                            <?php
-                                            endif;
-                                            ?>
+                                            <?php }?>
                                         </form>
                                     </td>
                                 </tr>

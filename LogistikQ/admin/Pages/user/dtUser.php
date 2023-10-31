@@ -15,7 +15,6 @@ $data_user = $model->dataUser();
         <div class="col-12">
             <div class="bg-light rounded h-100 p-4">
                 <h6 class="mb-4">Table User</h6>
-                <a href="index.php?url=Pages/user/user_form">
                     <div class="table-responsive">
                         <table id="datapegawai" class="table">
                             <thead>
@@ -44,11 +43,17 @@ $data_user = $model->dataUser();
                                                 <a href="index.php?url=Pages/user/detail_user&id=<?= $row['id'] ?>">
                                                     <button type="button" class="btn btn-info btn-sm">Details</button>
                                                 </a>
+                                                <?php 
+                                                if ($sesi['level'] != 'operator') :
+                                                ?>
                                                 <a href="index.php?url=Pages/user/user_form&idedit=<?= $row['id'] ?>">
                                                     <button type="button" class="btn btn-warning btn-sm">Update</button>
                                                 </a>
                                                 <button type="submit" class="btn btn-danger btn-sm" name="proses" value="hapus" onclick="return confirm('Apakah anda yakin ingin menghapusnya?')">Delete</button>
                                                 <input type="hidden" name="idx" value="<?= $row['id'] ?>">
+                                                <?php 
+                                                    endif;
+                                                ?>
                                             </form>
                                         </td>
                                     </tr>
