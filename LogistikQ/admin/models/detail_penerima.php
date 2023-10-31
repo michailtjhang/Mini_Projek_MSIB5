@@ -36,8 +36,8 @@ class detail_penerimaan
     }
 
     public function simpan($data){
-        $sql = "INSERT INTO detail_penerimaan (kode, pengiriman_id, nama_penerima, waktu_penerima)
-        VALUES (?,?,?,?)";
+        $sql = "INSERT INTO detail_penerimaan (kode, pengiriman_id, nama_penerima)
+        VALUES (?,?,?)";
         $ps = $this->koneksi->prepare($sql);
         $ps->execute($data);
     }
