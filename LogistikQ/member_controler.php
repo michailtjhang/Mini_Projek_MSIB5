@@ -1,7 +1,7 @@
 <?php  
 
 session_start();
-include_once 'models/koneksi.php';
+include_once 'admin/databases/koneksi.php';
 include_once 'models/member.php';
 
 $unama = $_POST['username'];
